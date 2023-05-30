@@ -43,7 +43,7 @@ public class java_project extends Application {
 		Scene ascene=new Scene(root_a);
 		
 		///onclick_main_說明
-		about_us.setOnAction(event->{
+		saying.setOnAction(event->{
 			primaryStage.setScene(dscene);
 		});	
 		//說明返回主頁
@@ -52,7 +52,7 @@ public class java_project extends Application {
 		});	
 		
 		//onclick_main_介紹我們
-		saying.setOnAction(event->{;
+		about_us.setOnAction(event->{;
 			primaryStage.setScene(ascene);
 		});	
 		//介紹返回主畫面
