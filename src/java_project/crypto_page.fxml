@@ -44,8 +44,8 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <TextArea layoutX="130.0" layoutY="24.0" prefHeight="79.0" prefWidth="349.0" text="故事簡介" />
-            <TextArea layoutX="118.0" layoutY="134.0" prefHeight="79.0" prefWidth="389.0" text="程式描述" />
+            <TextArea disable="true" layoutX="130.0" layoutY="24.0" prefHeight="79.0" prefWidth="349.0" text="故事簡介" />
+            <TextArea disable="true" layoutX="118.0" layoutY="134.0" prefHeight="79.0" prefWidth="389.0" text="程式描述" />
             <TextField layoutX="241.0" layoutY="289.0" />
             <Text layoutX="104.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="請輸入正確密碼" wrappingWidth="170.5">
                <font>

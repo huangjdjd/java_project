@@ -32,21 +32,23 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-         <children>
-            <TextArea layoutX="163.0" layoutY="61.0" prefHeight="150.0" prefWidth="315.0" text="文字謎題敘述" />
-            <Button fx:id="answer1" layoutX="94.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#judge_word_answer" text="Button" />
-            <Button fx:id="answer2" layoutX="225.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#judge_word_answer" text="Button" />
-            <Button fx:id="answer3" layoutX="350.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#judge_word_answer" text="Button" />
-            <Button fx:id="answer4" layoutX="480.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#judge_word_answer" text="Button" />
-         </children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="196.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lonely.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="256.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="成功購買" />
+      </children>
     </AnchorPane>
   </children>
 </VBox>

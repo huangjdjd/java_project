@@ -54,27 +54,27 @@
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="shop1" fitHeight="119.0" fitWidth="200.0" layoutX="45.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop1" fitHeight="119.0" fitWidth="200.0" layoutX="45.0" layoutY="201.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop2" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="201.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop6" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="369.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop5" fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="361.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="108.0" layoutY="165.0" prefHeight="15.0" prefWidth="88.0" text="商品名稱">
+            <Label layoutX="85.0" layoutY="165.0" prefHeight="15.0" prefWidth="88.0" text="商品名稱">
                <font>
                   <Font size="19.0" />
                </font>
@@ -84,22 +84,22 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop3" fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="201.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop7" fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="369.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop4" fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="201.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop8" fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="369.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
@@ -134,17 +134,17 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="265.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop9" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="523.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop10" fitHeight="150.0" fitWidth="200.0" layoutX="507.0" layoutY="523.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="321.0" layoutY="492.0" prefHeight="15.0" prefWidth="88.0" text="商品名稱">
+            <Label layoutX="331.0" layoutY="492.0" prefHeight="15.0" prefWidth="88.0" text="商品名稱">
                <font>
                   <Font size="19.0" />
                </font>

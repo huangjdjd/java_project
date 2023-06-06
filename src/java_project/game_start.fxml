@@ -36,6 +36,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
@@ -54,7 +55,7 @@
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="34.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="62.0" layoutX="26.0" layoutY="565.0" stroke="BLACK" strokeType="INSIDE" width="73.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="298.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="232.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="166.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
@@ -74,7 +75,19 @@
                   <Image url="@z_head.png" />
                </image>
             </ImageView>
-            <Label layoutX="156.0" layoutY="26.0" prefHeight="36.0" prefWidth="248.0" text="提示訊息" />
+            <Label fx:id="hint_message" layoutX="156.0" layoutY="26.0" prefHeight="36.0" prefWidth="248.0" text="提示訊息" />
+            <StackPane fx:id="main_pane18" layoutX="465.0" layoutY="453.0" prefHeight="60.0" prefWidth="63.0" />
+            <StackPane fx:id="main_pane19" layoutX="656.0" layoutY="495.0" prefHeight="60.0" prefWidth="63.0" />
+            <ImageView fx:id="maine_pane9" fitHeight="66.0" fitWidth="66.0" layoutX="562.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane8" fitHeight="66.0" fitWidth="66.0" layoutX="496.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane1" fitHeight="66.0" fitWidth="66.0" layoutX="34.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane2" fitHeight="66.0" fitWidth="66.0" layoutX="100.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane3" fitHeight="66.0" fitWidth="66.0" layoutX="166.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane4" fitHeight="66.0" fitWidth="66.0" layoutX="232.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane5" fitHeight="66.0" fitWidth="66.0" layoutX="298.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane6" fitHeight="66.0" fitWidth="66.0" layoutX="364.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane7" fitHeight="66.0" fitWidth="66.0" layoutX="432.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="maine_pane10" fitHeight="66.0" fitWidth="66.0" layoutX="628.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
       </children>
     </AnchorPane>
   </children>

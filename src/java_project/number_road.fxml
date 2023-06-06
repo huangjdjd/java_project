@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -45,19 +46,18 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-border-width: 5;" VBox.vgrow="ALWAYS">
          <children>
             <Text layoutX="262.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="解開封印中" wrappingWidth="116.0">
                <font>
                   <Font size="21.0" />
                </font>
             </Text>
-            <TextArea layoutX="223.0" layoutY="47.0" prefHeight="43.0" prefWidth="195.0" text="Text" />
-            <GridPane gridLinesVisible="true" layoutX="136.0" layoutY="92.0" prefHeight="266.0" prefWidth="435.0">
+            <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="191.0" layoutY="99.0" prefHeight="258.0" prefWidth="258.0" style="-fx-border-color: black; -fx-border-width: 5; -fx-border-color: gray;">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="65.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="76.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="264.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="74.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.0" minWidth="10.0" prefWidth="84.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="84.5" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -65,48 +65,50 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="103.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ImageView fx:id="jpg1" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <image>
                         <Image url="@8.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="86.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                  <ImageView fx:id="jpg2" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
                         <Image url="@9.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="103.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView fx:id="jpg8" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <image>
                         <Image url="@5.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-                     <image>
-                        <Image url="@2.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="103.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="jpg3" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
                         <Image url="@7.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="103.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                  <ImageView fx:id="jpg7" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@6.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <ImageView fx:id="jpg5" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                      <image>
                         <Image url="@3.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="87.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                  <ImageView fx:id="jpg4" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <image>
                         <Image url="@4.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="jpg6" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@2.png" />
+                     </image>
+                  </ImageView>
                </children>
             </GridPane>
+            <Button layoutX="515.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" text="Restart" />
+            <TextArea layoutX="162.0" layoutY="40.0" prefHeight="37.0" prefWidth="339.0" text="說明" />
          </children>
     </AnchorPane>
   </children>
