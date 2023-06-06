@@ -43,7 +43,7 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fx:id="shop_picture" fitHeight="125.0" fitWidth="139.0" layoutX="783.0" layoutY="545.0" onMouseClicked="#shop_show" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop_picture" fitHeight="78.0" fitWidth="91.0" layoutX="834.0" layoutY="571.0" onMouseClicked="#shop_show" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
@@ -63,6 +63,18 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="430.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="496.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="562.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <ImageView fx:id="bag" fitHeight="78.0" fitWidth="91.0" layoutX="729.0" layoutY="571.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lonely.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="60.0" layoutX="628.0" layoutY="567.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <ImageView fx:id="hint" fitHeight="60.0" fitWidth="63.0" layoutX="81.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@z_head.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="156.0" layoutY="26.0" prefHeight="36.0" prefWidth="248.0" text="提示訊息" />
       </children>
     </AnchorPane>
   </children>

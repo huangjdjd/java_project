@@ -45,6 +45,8 @@ public class java_project extends Application {
 	@FXML private ImageView shop1;
 	@FXML private Button sureBuy;
 	@FXML private Button cancelBuy;
+	@FXML private ImageView bag;
+	@FXML private Button bag_cancel;
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 
@@ -74,6 +76,11 @@ public class java_project extends Application {
 		buy.setController(this);
 		Parent Buy = buy.load();
 		Scene buy_page=new Scene(Buy);
+		//背包畫面
+		FXMLLoader bags = new FXMLLoader(getClass().getResource("bag_page.fxml"));
+		bags.setController(this);
+		Parent bag_root = bags.load();
+		Scene bag_page=new Scene(bag_root);
 		//正式遊戲畫面
 		FXMLLoader start_page = new FXMLLoader(getClass().getResource("game_start.fxml"));
 		start_page.setController(this);
@@ -83,7 +90,8 @@ public class java_project extends Application {
 //		mainGroup.getChildren().add(shop_picture);
 		Scene game_scene=new Scene(start_game_page);
 		
-
+		//設置施北北圖片
+		
 	
 		///onclick_main_說明
 		saying.setOnAction(event->{
@@ -114,7 +122,16 @@ public class java_project extends Application {
 		shop_return.setOnMouseClicked(event->{
 			primaryStage.setScene(game_scene);
 		});
-		
+		//點擊背包動作
+		bag.setOnMouseClicked(event->{
+			Stage bagStage=new Stage();
+			bag_cancel.setOnAction(e->{
+				bagStage.close();
+			});
+			bagStage.setTitle("bag");
+			bagStage.setScene(bag_page);
+			bagStage.show();
+		});
 		//進入遊戲
 		start.setOnAction(event->{
 			score_up();
@@ -162,6 +179,7 @@ public class java_project extends Application {
 //	        house1.setX(newx);
 //	        house1.setY(newy);
 //	    });
+		
 		
     }
 	
