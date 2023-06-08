@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -119,7 +120,6 @@ public class java_project extends Application {
 		Scene shop_page=new Scene(root_shop);
 		//數字華榮道畫面
 		FXMLLoader road = new FXMLLoader(getClass().getResource("number_road.fxml"));
-		road.setController(this);
 		Parent numberroad = road.load();
 		Scene number_road=new Scene(numberroad);
 		java_project.numberRoad=number_road;
@@ -279,6 +279,9 @@ public class java_project extends Application {
 		ImageView image=(ImageView)event.getSource();
 		String id=image.getId();
 		System.out.println(id);
+//		int x=gridPane.getColumnCount();
+//		int y=gridPane.getRowCount();
+//		System.out.println(x+" "+y);
 //		image.addEventHandler(ActionEvent.ACTION,new EventHandler<ActionEvent>() {
 //			@Override
 //			public void handle(ActionEvent event) {
