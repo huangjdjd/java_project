@@ -40,9 +40,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" style="-fx-background-image: url('java_project/road_background');" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-image: url('java_project/road_background');" VBox.vgrow="ALWAYS">
          <children>
             <Button fx:id="answer1" layoutX="64.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#judge_word_answer" prefHeight="51.0" prefWidth="95.0" text="視訊處理">
                <font>

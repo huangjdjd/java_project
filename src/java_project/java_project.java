@@ -36,10 +36,13 @@ class shop{
 }
 public class java_project extends Application {
 	//Variables
-	public int key_number=0;
+	public int key_number=4;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	public static int score = 1000;
 	//Components
+	@FXML private ImageView final_answer;
+	@FXML private ImageView box1;
+	@FXML private ImageView box2;
 	@FXML private ImageView a01;
 	@FXML private ImageView a02;
 	@FXML private ImageView a00;
@@ -89,12 +92,13 @@ public class java_project extends Application {
 	@FXML private ImageView bag;
 	@FXML private Button bag_cancel;
 	@FXML private Button road_restart;
+	@FXML private Text moze;
 	// crypto
 	@FXML private TextField password_input;
 	@FXML private Button password_commit;
 	@FXML private Button correct_password_return;
 	@FXML private Button wrong_password_return;
-
+	
 	// music
 	@FXML private Button music_success_close;
 
@@ -126,7 +130,7 @@ public class java_project extends Application {
 	public static Stage zstage;
 	public static Scene correct_word;
 	public static Scene wrong_word;
-
+	public static Scene finalpage;
 	public static Stage temp_page;
 
 	@Override
@@ -134,6 +138,12 @@ public class java_project extends Application {
 		idlist.add("22");
 		Stage Zstage=new Stage();
 		zstage=Zstage;
+		///最終葉面
+		FXMLLoader finals = new FXMLLoader(getClass().getResource("final.fxml"));
+		finals.setController(this);
+		Parent root_final = finals.load();
+		Scene final_page=new Scene(root_final);
+		java_project.finalpage=final_page;
 		//main
 		FXMLLoader main = new FXMLLoader(getClass().getResource("main.fxml"));
 		main.setController(this);
@@ -300,11 +310,16 @@ public class java_project extends Application {
 		music_success_close.setOnMouseClicked(event->{
 			temp_page.close();
 		});
-		//測試數字
+		//點擊頭像
 		hint.setOnMouseClicked(event->{
-			Stage jd=new Stage();
-			jd.setScene(number_road);
-			jd.show();
+			if(key_number==4) {
+				primaryStage.setScene(finalpage);
+				primaryStage.show();
+			}
+			else {
+				hint_message.setText(""+"我的記憶還沒找回來，請加油");
+			}
+
 			
 		});
 		//文字回答判斷
@@ -633,7 +648,24 @@ public class java_project extends Application {
 		score+=1;
 		System.out.println(score);
 	}
-	public void showsomething() {
+	public void final_box(Event event) {
+		ImageView image = (ImageView)event.getSource();
+		String id=image.getId();
+		System.out.println(id);
+		if(id.equals("box1")) {
+			box1.setImage(null);
+			box2.setImage(null);
+			Image good=new Image("java_project/girl.png");
+			final_answer.setImage(good);
+			moze.setText("恭喜你!");
+		}
+		else if(id.equals("box2")) {
+			box1.setImage(null);
+			box2.setImage(null);
+			moze.setText("請解開摩斯密碼");
+			Image bad=new Image("java_project/moze.png");
+			final_answer.setImage(bad);
+		}
 //		System.out.println("sdee");
 //		Image image=new Image("java_project/lonely.jpg");
 //		image1.setImage(image);
