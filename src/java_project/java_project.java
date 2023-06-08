@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -286,16 +287,17 @@ public class java_project extends Application {
 			
 		}
 	}
-	public void delete(GridPane gridpane, int row, int column) {
-	    Iterator<Node> iterator = gridpane.getChildren().iterator();
-	    while (iterator.hasNext()) {
-	        Node element = iterator.next();
-	        if (element instanceof ImageView && GridPane.getRowIndex(element) == row && GridPane.getColumnIndex(element) == column) {
-	            iterator.remove();
-	            System.out.println(row + " " + column);
-	        }
-	    }
-	}
+	public Node removeNodeByRowColumnIndex(final int row,final int column,GridPane gridPane) {
+
+		ObservableList<Node> childrens = gridPane.getChildren();
+		for(Node node : childrens) {
+		    if(node instanceof ImageView && gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+		        ImageView imageView=ImageView(node); // use what you want to remove
+		        gridPane.getChildren().remove(imageView);
+		        break;
+		    }
+		  } 
+		   }
 
 
 //	public void delete(GridPane gridpane,int row,int column) {
