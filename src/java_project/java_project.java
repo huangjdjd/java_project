@@ -39,14 +39,15 @@ public class java_project extends Application {
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	public static int score = 1000;
 	//Components
-	@FXML private ImageView jpg1;
-	@FXML private ImageView jpg2;
-	@FXML private ImageView jpg3;
-	@FXML private ImageView jpg4;
-	@FXML private ImageView jpg5;
-	@FXML private ImageView jpg6;
-	@FXML private ImageView jpg7;
-	@FXML private ImageView jpg8;
+	@FXML private ImageView a01;
+	@FXML private ImageView a02;
+	@FXML private ImageView a00;
+	@FXML private ImageView a10;
+	@FXML private ImageView a11;
+	@FXML private ImageView a12;
+	@FXML private ImageView a20;
+	@FXML private ImageView a21;
+	@FXML private ImageView a22;
 	@FXML private GridPane gridPane;
 	@FXML private Label hint_message;
 	
@@ -55,6 +56,7 @@ public class java_project extends Application {
 	@FXML private ImageView cookie;
 	@FXML private ImageView piano;
 	
+
 	@FXML private ImageView maine_pane1;
 	@FXML private ImageView maine_pane2;
 	@FXML private ImageView maine_pane3;
@@ -85,17 +87,39 @@ public class java_project extends Application {
 	@FXML private Button cancelBuy;
 	@FXML private ImageView bag;
 	@FXML private Button bag_cancel;
+	@FXML private Button road_restart;
+	// crypto
+	@FXML private TextField password_input;
+	@FXML private Button password_commit;
+	@FXML private Button correct_password_return;
+	@FXML private Button wrong_password_return;
+	
+
+	@FXML private Button correct_word_return;
+	@FXML private Button wrong_word_return;
+	//
+	ArrayList<String>idlist=new ArrayList<String>();
+
 	public int fixx=2;
 	public int fixy=2;
 	public static Scene buy;
 	public static Scene successBuy;
 	public static Scene numberRoad;
 	public static Scene crypto_page;
+	public static Scene correct_page;
+	public static Scene wrong_page;
 	public static Scene word_puzzle_page;
 	public static Stage bag_stage;
+	public static Stage word_vertify;
+	public static Stage password_verification_page;
+	public static Stage zstage;
+	public static Scene correct_word;
+	public static Scene wrong_word;
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		
+		idlist.add("22");
+		Stage Zstage=new Stage();
+		zstage=Zstage;
 		//main
 		FXMLLoader main = new FXMLLoader(getClass().getResource("main.fxml"));
 		main.setController(this);
@@ -139,12 +163,36 @@ public class java_project extends Application {
 		bags.setController(this);
 		Parent bag_root = bags.load();
 		Scene bag_page=new Scene(bag_root);
-		//解密葉面
+		//crypto頁面
 		FXMLLoader password = new FXMLLoader(getClass().getResource("crypto_page.fxml"));
 		password.setController(this);
 		Parent password_root = password.load();
 		Scene cryptopage=new Scene(password_root);
 		java_project.crypto_page=cryptopage;
+		//回答正確錯誤
+		FXMLLoader correct_word= new FXMLLoader(getClass().getResource("correct_word.fxml"));
+		correct_word.setController(this);
+		Parent correct_word_root = correct_word.load();
+		Scene correct_word_page=new Scene(correct_word_root);
+		java_project.correct_word=correct_word_page;
+		
+		FXMLLoader wrong_word= new FXMLLoader(getClass().getResource("wrong_word.fxml"));
+		wrong_word.setController(this);
+		Parent wrong_root =wrong_word.load();
+		Scene wrong_word_page=new Scene(wrong_root);
+		java_project.wrong_word=wrong_word_page;
+		//密碼正確
+		FXMLLoader correct_password = new FXMLLoader(getClass().getResource("correct_password_page.fxml"));
+		correct_password.setController(this);
+		Parent correct_password_root = correct_password.load();
+		Scene correct_page=new Scene(correct_password_root);
+		java_project.correct_page=correct_page;
+		//密碼錯誤
+		FXMLLoader wrong_password = new FXMLLoader(getClass().getResource("wrong_password_page.fxml"));
+		wrong_password.setController(this);
+		Parent wrong_password_root = wrong_password.load();
+		Scene wrong_page=new Scene(wrong_password_root);
+		java_project.wrong_page=wrong_page;
 		//文字頁面
 		FXMLLoader word = new FXMLLoader(getClass().getResource("word_puzzle.fxml"));
 		word.setController(this);
@@ -160,20 +208,11 @@ public class java_project extends Application {
 //		mainGroup.getChildren().add(shop_picture);
 		Scene game_scene=new Scene(start_game_page);
 		
-		//測試數字華榮道遊戲
-//			boolean hasChildrenInRow = gridPane.getRowConstraints().get(3).getMaxHeight()>0;判斷有無子節點
-//		    house1.setOnMousePressed(event -> {
-	        // 计算鼠标相对于节点的偏移量
-//	        x= event.getX() - house1.getLayoutX();
-//	        y= event.getY() - house1.getLayoutY();
-//	    });
-	//	    house1.setOnMouseDragged(event -> {
-		        // 根据鼠标位置更新节点位置
-	//	        double newx = event.getX() - x;
-	//	        double newy = event.getY() - y;
-	//	        house1.setX(newx);
-	//	        house1.setY(newy);
-	//	    });
+		//數字華榮restart
+		road_restart.setOnAction(event->{
+			zstage.close();
+		});
+
 
 	
 		///onclick_main_說明
@@ -216,13 +255,35 @@ public class java_project extends Application {
 			bagStage.setScene(bag_page);
 			bagStage.show();
 		});
-		//測試
+		//crypto 密碼確認
+		password_commit.setOnMouseClicked(event->{
+			if (password_check())
+				show_correct_page();
+			else
+				show_wrong_page();
+		});
+		//crypto 頁面關閉
+		correct_password_return.setOnMouseClicked(event->{
+			password_verification_page.close();
+		});
+		wrong_password_return.setOnMouseClicked(event->{
+			password_verification_page.close();
+		});
+		//測試數字
 		hint.setOnMouseClicked(event->{
 			Stage jd=new Stage();
 			jd.setScene(number_road);
 			jd.show();
 			
 		});
+		//文字回答判斷
+		wrong_word_return.setOnAction(event->{
+			word_vertify.close();
+		});
+		correct_word_return.setOnAction(event->{
+			word_vertify.close();
+		});
+		
 		//進入遊戲
 		start.setOnAction(event->{
 			score_up();
@@ -273,31 +334,34 @@ public class java_project extends Application {
 //	    });
     }
 	
-	public void testnumberroad(ActionEvent event) {
-
-		
-	}
+	
 	public void judge_word_answer(Event event) {
 		Button button = (Button)event.getSource();
 		String id=button.getId();
 		if(id.equals("answer1")) {
-			
+			word_vertify = new Stage();
+			word_vertify .setScene(wrong_word);
+			word_vertify.show();
 		}
-		else {
-			
+		else if(id.equals("answer2")){
+			word_vertify = new Stage();
+			word_vertify .setScene(wrong_word);
+			word_vertify.show();
 		}
+		else if(id.equals("answer3")){
+			word_vertify = new Stage();
+			word_vertify .setScene(correct_word);
+			word_vertify.show();
+		}
+		else if(id.equals("answer2")){
+			word_vertify = new Stage();
+			word_vertify .setScene(wrong_word);
+			word_vertify.show();
+		}
+			
+		
 	}
-	public Node removeNodeByRowColumnIndex(final int row,final int column,GridPane gridPane) {
 
-		ObservableList<Node> childrens = gridPane.getChildren();
-		for(Node node : childrens) {
-		    if(node instanceof ImageView && gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
-		        ImageView imageView=ImageView(node); // use what you want to remove
-		        gridPane.getChildren().remove(imageView);
-		        break;
-		    }
-		  } 
-		   }
 
 
 //	public void delete(GridPane gridpane,int row,int column) {
@@ -316,47 +380,66 @@ public class java_project extends Application {
 	public void number_road(Event event) {	
 		ImageView image = (ImageView) event.getSource();
 		String id=image.getId();
+		Image images=image.getImage();
+		String addid=String.valueOf(id.charAt(1))+String.valueOf(id.charAt(2));
 		System.out.println(id);
-		int x=gridPane.getRowIndex(image);
-		int y=gridPane.getColumnIndex(image);
-		System.out.println(x+" "+y);
-		System.out.println(" ");
+		int x= Character.getNumericValue(id.charAt(1));
+		int y= Character.getNumericValue(id.charAt(2));
 		int nx=0;
 		int ny=0;
+		int lx=Character.getNumericValue(idlist.get(0).charAt(0));
+		int ly=Character.getNumericValue(idlist.get(0).charAt(1));
+		System.out.println(lx+" "+ly);
 		for(int i=-1;i<=1;i++) {
 			nx=x+i;
 			ny=y+i;
-			System.out.println(nx+" c"+y);
-			System.out.println(x+" c"+ny);
-		
-			if((nx>=0&& y<3) || (x>=0 && ny<3)) {
-				System.out.println(nx+" "+y);
-				if(nx==fixx && y==fixy) {
-					System.out.println(nx+" s "+y);
-				
-					delete(gridPane,fixx,fixy);
-					gridPane.add(image,fixx,fixy );
-					fixx=nx;
-					fixy=y;
-					System.out.println(fixx+" fixed "+fixy);
-					break;
-				}
-				System.out.println(x+" "+ny);
-				if(x==fixx && ny==fixy) {
-//					System.out.println(x+" s "+ny);
-					delete(gridPane,fixx,fixy);
-					gridPane.add(image,fixx,fixy );
-					fixx=x;
-					fixx=ny;
-//					System.out.println(fixx+"  fixed"+fixy);
-					break;
-				}
+			if(nx==lx && y==ly) {
+				image.setImage(null);
+				String newidx=String.valueOf(lx)+String.valueOf(ly);
+				ImageView newimagex=(ImageView)numberRoad.lookup("#a"+newidx);
+				newimagex.setImage(images);
+				idlist.clear();
+				idlist.add(addid);
+				break;
 			}
-			System.out.println("range");
-			System.out.println(fixx+"fx"+fixy);
+			if(x==lx && ny==ly) {
+				image.setImage(null);
+				String newidx=String.valueOf(lx)+String.valueOf(ly);
+				ImageView newimagey=(ImageView)numberRoad.lookup("#a"+newidx);
+				newimagey.setImage(images);
+				idlist.clear();
+				idlist.add(addid);
+				break;
+			}
+				
+			
 		}
 
+
 	}
+	
+	//crypto
+		private String correct_password = "w31c0m3t0c5i3";
+		public boolean password_check() {
+			String answer = password_input.getText();
+			if (answer.equals(correct_password))
+				return true;
+			else
+				return false;
+		}
+
+		public void show_correct_page() {
+			password_verification_page = new Stage();
+			password_verification_page.setScene(correct_page);
+			password_verification_page.show();
+		}
+
+		public void show_wrong_page() {
+			password_verification_page = new Stage();
+			password_verification_page.setScene(wrong_page);
+			password_verification_page.show();
+		}
+
 	public void shop_show() {
 
 	}
@@ -381,10 +464,10 @@ public class java_project extends Application {
 		}
 		else if(zpicture.getImage()!=null) {
 			zpicture.setOnMouseClicked(e->{
-				Stage zStage=new Stage();
-				zStage.setScene(numberRoad);
+//				Stage zStage=new Stage();
+				zstage.setScene(numberRoad);
 				bag_stage.close();
-				zStage.show();
+				zstage.show();
 			});
 		}
 		else if(cookie.getImage()!=null) {

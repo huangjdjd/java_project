@@ -37,9 +37,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -48,68 +46,63 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-border-width: 5;" VBox.vgrow="ALWAYS">
          <children>
-            <Text layoutX="262.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="解開封印中" wrappingWidth="116.0">
+            <StackPane layoutX="79.0" prefHeight="407.0" prefWidth="390.0">
+               <children>
+                  <ImageView fitHeight="403.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@background_road.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <Text layoutX="234.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="解開封印中" wrappingWidth="116.0">
                <font>
                   <Font size="21.0" />
                </font>
             </Text>
-            <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="177.0" layoutY="112.0" prefHeight="258.0" prefWidth="258.0" style="-fx-border-color: black; -fx-border-width: 5; -fx-border-color: gray;">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="86.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="86.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="86.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <ImageView fx:id="jpg8" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                     <image>
-                        <Image url="@5.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="jpg7" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@6.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="jpg5" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@3.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="jpg6" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@2.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="jpg3" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
-                     <image>
-                        <Image url="@7.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="jpg2" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                     <image>
-                        <Image url="@9.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="jpg9" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ImageView fx:id="jpg4" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@4.png" />
-                     </image>
-                  </ImageView>
-      				<ImageView fx:id="jpg1" fitHeight="86.0" fitWidth="86.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" GridPane.columnIndex="0">
-                     <image>
-                        <Image url="@8.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </GridPane>
-            <Button layoutX="515.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" text="Restart" />
-            <TextArea layoutX="162.0" layoutY="40.0" prefHeight="37.0" prefWidth="339.0" text="說明" />
+            <Button fx:id="road_restart" layoutX="531.0" layoutY="340.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" text="取消" />
+            <TextArea layoutX="122.0" layoutY="51.0" prefHeight="37.0" prefWidth="339.0" text="說明" />
+            <ImageView fx:id="a12" fitHeight="86.0" fitWidth="86.0" layoutX="332.0" layoutY="194.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@2.png" />
+               </image>
+            </ImageView>
+				<ImageView fx:id="a21" fitHeight="86.0" fitWidth="86.0" layoutX="248.0" layoutY="280.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@8.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a11" fitHeight="86.0" fitWidth="86.0" layoutX="246.0" layoutY="194.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a20" fitHeight="86.0" fitWidth="86.0" layoutX="162.0" layoutY="280.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@6.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a02" fitHeight="86.0" fitWidth="86.0" layoutX="332.0" layoutY="108.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a01" fitHeight="86.0" fitWidth="86.0" layoutX="246.0" layoutY="108.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a10" fitHeight="86.0" fitWidth="86.0" layoutX="162.0" layoutY="194.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a00" fitHeight="86.0" fitWidth="86.0" layoutX="162.0" layoutY="108.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@9.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a22" fitHeight="86.0" fitWidth="86.0" layoutX="335.0" layoutY="280.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" />
          </children>
     </AnchorPane>
   </children>
