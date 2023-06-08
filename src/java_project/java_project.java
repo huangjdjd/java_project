@@ -2,11 +2,13 @@ package java_project;
 
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -82,7 +84,8 @@ public class java_project extends Application {
 	@FXML private Button cancelBuy;
 	@FXML private ImageView bag;
 	@FXML private Button bag_cancel;
-	
+	public int fixx=2;
+	public int fixy=2;
 	public static Scene buy;
 	public static Scene successBuy;
 	public static Scene numberRoad;
@@ -120,6 +123,7 @@ public class java_project extends Application {
 		Scene shop_page=new Scene(root_shop);
 		//數字華榮道畫面
 		FXMLLoader road = new FXMLLoader(getClass().getResource("number_road.fxml"));
+		road.setController(this);
 		Parent numberroad = road.load();
 		Scene number_road=new Scene(numberroad);
 		java_project.numberRoad=number_road;
@@ -211,6 +215,13 @@ public class java_project extends Application {
 			bagStage.setScene(bag_page);
 			bagStage.show();
 		});
+		//測試
+		hint.setOnMouseClicked(event->{
+			Stage jd=new Stage();
+			jd.setScene(number_road);
+			jd.show();
+			
+		});
 		//進入遊戲
 		start.setOnAction(event->{
 			score_up();
@@ -243,6 +254,7 @@ public class java_project extends Application {
 //			 newStage.show();
 //		});
 		///設初始畫面
+
 		primaryStage.setTitle("遊戲名稱");
 		primaryStage.setScene(mscene);
 		primaryStage.show();
@@ -274,29 +286,74 @@ public class java_project extends Application {
 			
 		}
 	}
-	public void number_road(Event event) {
-//		ImageView image = (ImageView) event.getSource();
-		ImageView image=(ImageView)event.getSource();
+	public void delete(GridPane gridpane, int row, int column) {
+	    Iterator<Node> iterator = gridpane.getChildren().iterator();
+	    while (iterator.hasNext()) {
+	        Node element = iterator.next();
+	        if (element instanceof ImageView && GridPane.getRowIndex(element) == row && GridPane.getColumnIndex(element) == column) {
+	            iterator.remove();
+	            System.out.println(row + " " + column);
+	        }
+	    }
+	}
+
+
+//	public void delete(GridPane gridpane,int row,int column) {
+//		for(int i=0;i<9;i++) {
+//			ImageView elemtn=(ImageView) gridpane.getChildren().get(i);
+//		
+//			if(gridpane.getRowIndex(elemtn)==row &&gridpane.getColumnIndex(elemtn)==column) {
+//				
+//				gridpane.getChildren().remove(elemtn);
+//				System.out.println(row+" "+column);
+//				System.out.println(gridpane.getChildren().get(i));
+//			}
+//		}
+//	}
+
+	public void number_road(Event event) {	
+		ImageView image = (ImageView) event.getSource();
 		String id=image.getId();
 		System.out.println(id);
-//		int x=gridPane.getColumnCount();
-//		int y=gridPane.getRowCount();
-//		System.out.println(x+" "+y);
-//		image.addEventHandler(ActionEvent.ACTION,new EventHandler<ActionEvent>() {
-//			@Override
-//			public void handle(ActionEvent event) {
-//			
-//			}
-//		});
-	
-//	    image.setOnMouseMoved(event -> {
-//	    	image.setLayoutX(event.getX());
-//	    });
-//		
+		int x=gridPane.getRowIndex(image);
+		int y=gridPane.getColumnIndex(image);
+		System.out.println(x+" "+y);
+		System.out.println(" ");
+		int nx=0;
+		int ny=0;
+		for(int i=-1;i<=1;i++) {
+			nx=x+i;
+			ny=y+i;
+			System.out.println(nx+" c"+y);
+			System.out.println(x+" c"+ny);
+		
+			if((nx>=0&& y<3) || (x>=0 && ny<3)) {
+				System.out.println(nx+" "+y);
+				if(nx==fixx && y==fixy) {
+					System.out.println(nx+" s "+y);
+				
+					delete(gridPane,fixx,fixy);
+					gridPane.add(image,fixx,fixy );
+					fixx=nx;
+					fixy=y;
+					System.out.println(fixx+" fixed "+fixy);
+					break;
+				}
+				System.out.println(x+" "+ny);
+				if(x==fixx && ny==fixy) {
+					System.out.println(x+" s "+ny);
+					delete(gridPane,fixx,fixy);
+					gridPane.add(image,fixx,fixy );
+					fixx=x;
+					fixx=ny;
+					System.out.println(fixx+"  fixed"+fixy);
+					break;
+				}
+			}
+			System.out.println("range");
+			System.out.println(fixx+"fx"+fixy);
+		}
 
-//		a.setOnDragDetected(event->{
-//
-//		});
 	}
 	public void shop_show() {
 
