@@ -36,18 +36,22 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <VBox prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="196.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="176.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <Text layoutX="256.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="成功購買" />
+            <Text layoutX="95.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="成功購買" wrappingWidth="185.5">
+               <font>
+                  <Font size="35.0" />
+               </font></Text>
       </children>
     </AnchorPane>
   </children>

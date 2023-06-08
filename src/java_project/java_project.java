@@ -93,11 +93,10 @@ public class java_project extends Application {
 	@FXML private Button password_commit;
 	@FXML private Button correct_password_return;
 	@FXML private Button wrong_password_return;
-<<<<<<< HEAD
-=======
+
 	// music
 	@FXML private Button music_success_close;
->>>>>>> d88dc2d6861dd15d36f8c969a3dc5569107f031f
+
 	
 
 	@FXML private Button correct_word_return;
@@ -117,15 +116,15 @@ public class java_project extends Application {
 	public static Scene music_success_page;
 	public static Scene word_puzzle_page;
 	public static Stage bag_stage;
-<<<<<<< HEAD
+
 	public static Stage word_vertify;
 	public static Stage password_verification_page;
 	public static Stage zstage;
 	public static Scene correct_word;
 	public static Scene wrong_word;
-=======
+
 	public static Stage temp_page;
->>>>>>> d88dc2d6861dd15d36f8c969a3dc5569107f031f
+
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		idlist.add("22");
@@ -537,6 +536,7 @@ public class java_project extends Application {
 			card.setOnMouseClicked(e->{
 				Stage cardStage=new Stage();
 				cardStage.setScene(crypto_page);
+				cardStage.setTitle("ss");
 				bag_stage.close();
 				cardStage.show();
 			});
@@ -545,6 +545,7 @@ public class java_project extends Application {
 			zpicture.setOnMouseClicked(e->{
 //				Stage zStage=new Stage();
 				zstage.setScene(numberRoad);
+				zstage.setTitle("ss");
 				bag_stage.close();
 				zstage.show();
 			});
@@ -553,6 +554,7 @@ public class java_project extends Application {
 			cookie.setOnMouseClicked(e->{
 				Stage cookStage=new Stage();
 				cookStage.setScene(word_puzzle_page);
+				cookStage.setTitle("ss");
 				bag_stage.close();
 				cookStage.show();
 			});
@@ -573,27 +575,27 @@ public class java_project extends Application {
 		 });
 		 sureBuy.setOnAction(e->{
 			 switch (id){
-			 case "shop1": 	Image image1 = new Image("java_project/lonely.jpg");maine_pane1.setImage(image1);hint_message.setText("");
+			 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("");
 			 break;
-			 case "shop2": 	Image image2 = new Image("java_project/lonely.jpg");maine_pane2.setImage(image2);hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
-			 Image cardimage=new Image("java_project/lonely.jpg");card.setImage(cardimage);
+			 case "shop2": 	Image image2 = new Image("java_project/tenyear.png");maine_pane2.setImage(image2);hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
+			 Image cardimage=new Image("java_project/tenyear.png");card.setImage(cardimage);
 			 break;
-			 case "shop3": 	Image image3 = new Image("java_project/lonely.jpg");maine_pane3.setImage(image3);hint_message.setText("");
+			 case "shop3": 	Image image3 = new Image("java_project/concert.png");maine_pane3.setImage(image3);hint_message.setText("");
 			 break;
-			 case "shop4": 	Image image4 = new Image("java_project/lonely.jpg");maine_pane4.setImage(image4);hint_message.setText("恭喜你獲得二胡");
-			 Image pianoimage=new Image("java_project/lonely.jpg");piano.setImage(pianoimage);
+			 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");maine_pane4.setImage(image4);hint_message.setText("恭喜你獲得二胡");
+			 Image pianoimage=new Image("java_project/twopiano.png");piano.setImage(pianoimage);
 			 break;
-			 case "shop5": 	Image image5 = new Image("java_project/lonely.jpg");maine_pane5.setImage(image5);hint_message.setText("");
+			 case "shop5": 	Image image5 = new Image("java_project/aipiano.png");maine_pane5.setImage(image5);hint_message.setText("");
 			 break;
-			 case "shop6": 	Image image6 = new Image("java_project/lonely.jpg");maine_pane6.setImage(image6);hint_message.setText("");
+			 case "shop6": 	Image image6 = new Image("java_project/company.png");maine_pane6.setImage(image6);hint_message.setText("");
 			 break;
-			 case "shop7": 	Image image7 = new Image("java_project/lonely.jpg");maine_pane7.setImage(image7);hint_message.setText("恭喜你獲得鐵皮屋鬆餅");
-			 Image cookieimage=new Image("java_project/lonely.jpg");cookie.setImage(cookieimage);
+			 case "shop7": 	Image image7 = new Image("java_project/animal.png");maine_pane7.setImage(image7);hint_message.setText("恭喜你獲得鐵皮屋鬆餅");
+			 Image cookieimage=new Image("java_project/animal.png");cookie.setImage(cookieimage);
 			 break;
-			 case "shop8": 	Image image8 = new Image("java_project/lonely.jpg");maine_pane8.setImage(image8);hint_message.setText("恭喜你獲得照片");
-			 Image zimage=new Image("java_project/lonely.jpg");zpicture.setImage(zimage);
+			 case "shop8": 	Image image8 = new Image("java_project/assitant.png");maine_pane8.setImage(image8);hint_message.setText("恭喜你獲得照片");
+			 Image zimage=new Image("java_project/assitant.png");zpicture.setImage(zimage);
 			 break;
-			 case "shop9": 	Image image9 = new Image("java_project/lonely.jpg");maine_pane9.setImage(image9);hint_message.setText("");
+			 case "shop9": 	Image image9 = new Image("java_project/lab.png");maine_pane9.setImage(image9);hint_message.setText("");
 			 break;
 			 case "shop10": Image image10 = new Image("java_project/lonely.jpg");maine_pane10.setImage(image10);
 			 break;
