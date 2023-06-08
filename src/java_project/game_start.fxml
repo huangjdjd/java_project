@@ -90,7 +90,7 @@
             <ImageView fx:id="maine_pane10" fitHeight="66.0" fitWidth="66.0" layoutX="628.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="467.0" fitWidth="659.0" layoutX="43.0" layoutY="83.0">
                <image>
-                  <Image url="@../../../src/Map.png" />
+                  <Image url="@map.png" />
                </image>
             </ImageView>
       </children>
