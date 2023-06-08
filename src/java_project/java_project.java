@@ -341,12 +341,12 @@ public class java_project extends Application {
 				}
 				System.out.println(x+" "+ny);
 				if(x==fixx && ny==fixy) {
-					System.out.println(x+" s "+ny);
+//					System.out.println(x+" s "+ny);
 					delete(gridPane,fixx,fixy);
 					gridPane.add(image,fixx,fixy );
 					fixx=x;
 					fixx=ny;
-					System.out.println(fixx+"  fixed"+fixy);
+//					System.out.println(fixx+"  fixed"+fixy);
 					break;
 				}
 			}
