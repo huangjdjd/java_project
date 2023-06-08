@@ -99,6 +99,7 @@ public class java_project extends Application {
 	public static Scene crypto_page;
 	public static Scene correct_page;
 	public static Scene wrong_page;
+	public static Scene music_page;
 	public static Scene word_puzzle_page;
 	public static Stage bag_stage;
 	public static Stage password_verification_page;
@@ -166,6 +167,12 @@ public class java_project extends Application {
 		Parent wrong_password_root = wrong_password.load();
 		Scene wrong_page=new Scene(wrong_password_root);
 		java_project.wrong_page=wrong_page;
+		//音樂頁面
+		FXMLLoader music = new FXMLLoader(getClass().getResource("music_page.fxml"));
+		music.setController(this);
+		Parent music_root = music.load();
+		Scene musicpage=new Scene(music_root);
+		java_project.music_page=musicpage;
 		//文字頁面
 		FXMLLoader word = new FXMLLoader(getClass().getResource("word_puzzle.fxml"));
 		word.setController(this);
@@ -428,7 +435,15 @@ public class java_project extends Application {
 //	}
 	
 	public void touch_collect() {
-		if(card.getImage() != null) {
+		if(piano.getImage() != null) {
+			piano.setOnMouseClicked(e->{
+				Stage pianoStage=new Stage();
+				pianoStage.setScene(music_page);
+				bag_stage.close();
+				pianoStage.show();
+			});
+		}
+		else if(card.getImage() != null) {
 			card.setOnMouseClicked(e->{
 				Stage cardStage=new Stage();
 				cardStage.setScene(crypto_page);

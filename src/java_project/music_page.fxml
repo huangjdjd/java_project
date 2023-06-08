@@ -1,37 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
-  All rights reserved. Use is subject to license terms.
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-  This file is available and licensed under the following license:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
-
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in
-    the documentation and/or other materials provided with the distribution.
-  - Neither the name of Oracle Corporation nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
-<?import javafx.scene.layout.VBox?>
-
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="100.0" layoutX="500.0" layoutY="64.0" startX="-43.999969482421875" startY="0.49999237060546875" stroke="#009a0d" strokeWidth="5.0" />
+      <Line endX="100.0" layoutX="500.0" layoutY="318.0" startX="-64.99996948242188" stroke="#009a0d" strokeWidth="5.0" />
+      <Line endX="100.0" layoutX="500.0" layoutY="249.0" startX="-12.999969482421875" startY="1.52587890625E-5" stroke="#009a0d" strokeWidth="5.0" />
+      <Line endX="100.0" layoutX="500.0" layoutY="174.0" startX="-64.99996948242188" startY="0.5000152587890625" stroke="#009a0d" strokeWidth="5.0" />
+      <Line endX="100.0" layoutX="500.0" layoutY="119.0" startX="-134.86886596679688" startY="7.62939453125E-6" stroke="#009a0d" strokeWidth="5.0" />
+      <Text layoutX="72.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="演奏練習">
+         <font>
+            <Font name="Arial Black" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="故事：今天是悠閒且天氣晴朗的一天，施杯杯決定來練習一下二胡，讓技術不要生疏。請與施杯杯一起演奏望春風這首經典名曲！" wrappingWidth="151.071044921875">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="412.0" layoutY="212.0">
+         <image>
+            <Image url="@A_note.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="360.0" layoutY="137.0">
+         <image>
+            <Image url="@C_note.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="82.0" layoutX="285.0" layoutY="82.0">
+         <image>
+            <Image url="@D_note.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="381.0" layoutY="27.0">
+         <image>
+            <Image url="@E_note.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="360.0" layoutY="281.0">
+         <image>
+            <Image url="@G_note.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
