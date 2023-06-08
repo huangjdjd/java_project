@@ -36,6 +36,7 @@ class shop{
 }
 public class java_project extends Application {
 	//Variables
+	public int key_number=0;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	public static int score = 1000;
 	//Components
@@ -98,7 +99,10 @@ public class java_project extends Application {
 	@FXML private Button music_success_close;
 
 	
-
+	@FXML private ImageView zpicture_key;
+	@FXML private ImageView card_key;
+	@FXML private ImageView cookie_key;
+	@FXML private ImageView piano_key;
 	@FXML private Button correct_word_return;
 	@FXML private Button wrong_word_return;
 	//
@@ -116,7 +120,7 @@ public class java_project extends Application {
 	public static Scene music_success_page;
 	public static Scene word_puzzle_page;
 	public static Stage bag_stage;
-
+	public static Scene bagpage;
 	public static Stage word_vertify;
 	public static Stage password_verification_page;
 	public static Stage zstage;
@@ -173,6 +177,7 @@ public class java_project extends Application {
 		bags.setController(this);
 		Parent bag_root = bags.load();
 		Scene bag_page=new Scene(bag_root);
+		java_project.bagpage=bag_page;
 		//crypto頁面
 		FXMLLoader password = new FXMLLoader(getClass().getResource("crypto_page.fxml"));
 		password.setController(this);
@@ -377,6 +382,10 @@ public class java_project extends Application {
 		else if(id.equals("answer3")){
 			word_vertify = new Stage();
 			word_vertify .setScene(correct_word);
+			Image keyimage=new Image("java_project/key.png");
+			key_number+=1;
+			cookie_key.setImage(keyimage);
+			
 			word_vertify.show();
 		}
 		else if(id.equals("answer2")){
@@ -439,8 +448,11 @@ public class java_project extends Application {
 			}
 				
 			
+			
 		}
-
+		Image zpicimage=new Image("java_project/key.png");
+		zpicture_key.setImage(zpicimage);
+		key_number+=1;
 
 	}
 	
@@ -449,6 +461,8 @@ public class java_project extends Application {
 	public boolean password_check() {
 		String answer = password_input.getText();
 		if (answer.equals(correct_password))
+		
+//			Image secretimage=new Image("java_project/key.png");
 			return true;
 		else
 			return false;
@@ -494,6 +508,9 @@ public class java_project extends Application {
 	public void show_correct_page() {
 		temp_page = new Stage();
 		temp_page.setScene(correct_page);
+		Image crytoimage=new Image("java_project/key.png");
+		card_key.setImage(crytoimage);
+		key_number+=1;
 		temp_page.show();
 	}
 
@@ -507,6 +524,9 @@ public class java_project extends Application {
 	public void show_success_page() {
 		temp_page = new Stage();
 		temp_page.setScene(music_success_page);
+		Image pianoimage=new Image("java_project/key,png");
+		piano_key.setImage(pianoimage);
+		key_number+=1;
 		temp_page.show();
 	}
 
@@ -532,7 +552,7 @@ public class java_project extends Application {
 				pianoStage.show();
 			});
 		}
-		else if(card.getImage() != null) {
+		if(card.getImage() != null) {
 			card.setOnMouseClicked(e->{
 				Stage cardStage=new Stage();
 				cardStage.setScene(crypto_page);
@@ -541,7 +561,7 @@ public class java_project extends Application {
 				cardStage.show();
 			});
 		}
-		else if(zpicture.getImage()!=null) {
+		if(zpicture.getImage()!=null) {
 			zpicture.setOnMouseClicked(e->{
 //				Stage zStage=new Stage();
 				zstage.setScene(numberRoad);
@@ -550,7 +570,7 @@ public class java_project extends Application {
 				zstage.show();
 			});
 		}
-		else if(cookie.getImage()!=null) {
+		if(cookie.getImage()!=null) {
 			cookie.setOnMouseClicked(e->{
 				Stage cookStage=new Stage();
 				cookStage.setScene(word_puzzle_page);
@@ -607,7 +627,6 @@ public class java_project extends Application {
 		 newStage.show();
 //		 
 	}
-
 
 	public void alert() {
 		System.out.println("ss");
