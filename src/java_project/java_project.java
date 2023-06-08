@@ -93,6 +93,11 @@ public class java_project extends Application {
 	@FXML private Button password_commit;
 	@FXML private Button correct_password_return;
 	@FXML private Button wrong_password_return;
+<<<<<<< HEAD
+=======
+	// music
+	@FXML private Button music_success_close;
+>>>>>>> d88dc2d6861dd15d36f8c969a3dc5569107f031f
 	
 
 	@FXML private Button correct_word_return;
@@ -108,13 +113,19 @@ public class java_project extends Application {
 	public static Scene crypto_page;
 	public static Scene correct_page;
 	public static Scene wrong_page;
+	public static Scene music_page;
+	public static Scene music_success_page;
 	public static Scene word_puzzle_page;
 	public static Stage bag_stage;
+<<<<<<< HEAD
 	public static Stage word_vertify;
 	public static Stage password_verification_page;
 	public static Stage zstage;
 	public static Scene correct_word;
 	public static Scene wrong_word;
+=======
+	public static Stage temp_page;
+>>>>>>> d88dc2d6861dd15d36f8c969a3dc5569107f031f
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		idlist.add("22");
@@ -193,6 +204,18 @@ public class java_project extends Application {
 		Parent wrong_password_root = wrong_password.load();
 		Scene wrong_page=new Scene(wrong_password_root);
 		java_project.wrong_page=wrong_page;
+		//音樂頁面
+		FXMLLoader music = new FXMLLoader(getClass().getResource("music_page.fxml"));
+		music.setController(this);
+		Parent music_root = music.load();
+		Scene musicpage=new Scene(music_root);
+		java_project.music_page=musicpage;
+		//音樂成功
+		FXMLLoader music_success = new FXMLLoader(getClass().getResource("music_success_page.fxml"));
+		music_success.setController(this);
+		Parent music_success_root = music_success.load();
+		Scene music_success_page=new Scene(music_success_root);
+		java_project.music_success_page=music_success_page;
 		//文字頁面
 		FXMLLoader word = new FXMLLoader(getClass().getResource("word_puzzle.fxml"));
 		word.setController(this);
@@ -264,10 +287,14 @@ public class java_project extends Application {
 		});
 		//crypto 頁面關閉
 		correct_password_return.setOnMouseClicked(event->{
-			password_verification_page.close();
+			temp_page.close();
 		});
 		wrong_password_return.setOnMouseClicked(event->{
-			password_verification_page.close();
+			temp_page.close();
+		});
+		//music 頁面關閉
+		music_success_close.setOnMouseClicked(event->{
+			temp_page.close();
 		});
 		//測試數字
 		hint.setOnMouseClicked(event->{
@@ -419,26 +446,70 @@ public class java_project extends Application {
 	}
 	
 	//crypto
-		private String correct_password = "w31c0m3t0c5i3";
-		public boolean password_check() {
-			String answer = password_input.getText();
-			if (answer.equals(correct_password))
-				return true;
-			else
-				return false;
+	private String correct_password = "w31c0m3t0c5i3";
+	public boolean password_check() {
+		String answer = password_input.getText();
+		if (answer.equals(correct_password))
+			return true;
+		else
+			return false;
+	}
+	
+	//music
+	String music_note_stack = "";
+	String correct_melody = "55612123";
+	public void play_music(Event event) {
+		ImageView image = (ImageView) event.getSource();
+		String id=image.getId();
+		switch (id) {
+		case "G_note": music_note_stack += '5'; break;
+		case "A_note": music_note_stack += '6'; break;
+		case "C_note": music_note_stack += '1'; break;
+		case "D_note": music_note_stack += '2'; break;
+		case "E_note": music_note_stack += '3'; break;
 		}
+		if (music_note_stack.length() == 1 && (!music_note_stack.equals(correct_melody.substring(0, 1))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 2 && (!music_note_stack.equals(correct_melody.substring(0, 2))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 3 && (!music_note_stack.equals(correct_melody.substring(0, 3))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 4 && (!music_note_stack.equals(correct_melody.substring(0, 4))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 5 && (!music_note_stack.equals(correct_melody.substring(0, 5))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 6 && (!music_note_stack.equals(correct_melody.substring(0, 6))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 7 && (!music_note_stack.equals(correct_melody.substring(0, 7))))
+			music_note_stack = "";
+		else if (music_note_stack.length() == 8 && (!music_note_stack.equals(correct_melody.substring(0, 8))))
+			music_note_stack = "";
+		
+		if (music_note_stack.equals(correct_melody)) {
+			show_success_page();
+			music_note_stack = "";
+		}
+	}
+	
+	//crypto
+	public void show_correct_page() {
+		temp_page = new Stage();
+		temp_page.setScene(correct_page);
+		temp_page.show();
+	}
 
-		public void show_correct_page() {
-			password_verification_page = new Stage();
-			password_verification_page.setScene(correct_page);
-			password_verification_page.show();
-		}
-
-		public void show_wrong_page() {
-			password_verification_page = new Stage();
-			password_verification_page.setScene(wrong_page);
-			password_verification_page.show();
-		}
+	public void show_wrong_page() {
+		temp_page = new Stage();
+		temp_page.setScene(wrong_page);
+		temp_page.show();
+	}
+	
+	//music
+	public void show_success_page() {
+		temp_page = new Stage();
+		temp_page.setScene(music_success_page);
+		temp_page.show();
+	}
 
 	public void shop_show() {
 
@@ -454,7 +525,15 @@ public class java_project extends Application {
 //	}
 	
 	public void touch_collect() {
-		if(card.getImage() != null) {
+		if(piano.getImage() != null) {
+			piano.setOnMouseClicked(e->{
+				Stage pianoStage=new Stage();
+				pianoStage.setScene(music_page);
+				bag_stage.close();
+				pianoStage.show();
+			});
+		}
+		else if(card.getImage() != null) {
 			card.setOnMouseClicked(e->{
 				Stage cardStage=new Stage();
 				cardStage.setScene(crypto_page);
