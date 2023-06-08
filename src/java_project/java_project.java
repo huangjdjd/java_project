@@ -82,13 +82,22 @@ public class java_project extends Application {
 	@FXML private Button cancelBuy;
 	@FXML private ImageView bag;
 	@FXML private Button bag_cancel;
+	// crypto
+	@FXML private TextField password_input;
+	@FXML private Button password_commit;
+	@FXML private Button correct_password_return;
+	@FXML private Button wrong_password_return;
+	//
 	
 	public static Scene buy;
 	public static Scene successBuy;
 	public static Scene numberRoad;
 	public static Scene crypto_page;
+	public static Scene correct_page;
+	public static Scene wrong_page;
 	public static Scene word_puzzle_page;
 	public static Stage bag_stage;
+	public static Stage password_verification_page;
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		
@@ -120,6 +129,7 @@ public class java_project extends Application {
 		Scene shop_page=new Scene(root_shop);
 		//數字華榮道畫面
 		FXMLLoader road = new FXMLLoader(getClass().getResource("number_road.fxml"));
+		road.setController(this);
 		Parent numberroad = road.load();
 		Scene number_road=new Scene(numberroad);
 		java_project.numberRoad=number_road;
@@ -134,12 +144,24 @@ public class java_project extends Application {
 		bags.setController(this);
 		Parent bag_root = bags.load();
 		Scene bag_page=new Scene(bag_root);
-		//解密葉面
+		//crypto頁面
 		FXMLLoader password = new FXMLLoader(getClass().getResource("crypto_page.fxml"));
 		password.setController(this);
 		Parent password_root = password.load();
 		Scene cryptopage=new Scene(password_root);
 		java_project.crypto_page=cryptopage;
+		//密碼正確
+		FXMLLoader correct_password = new FXMLLoader(getClass().getResource("correct_password_page.fxml"));
+		correct_password.setController(this);
+		Parent correct_password_root = correct_password.load();
+		Scene correct_page=new Scene(correct_password_root);
+		java_project.correct_page=correct_page;
+		//密碼錯誤
+		FXMLLoader wrong_password = new FXMLLoader(getClass().getResource("wrong_password_page.fxml"));
+		wrong_password.setController(this);
+		Parent wrong_password_root = wrong_password.load();
+		Scene wrong_page=new Scene(wrong_password_root);
+		java_project.wrong_page=wrong_page;
 		//文字頁面
 		FXMLLoader word = new FXMLLoader(getClass().getResource("word_puzzle.fxml"));
 		word.setController(this);
@@ -210,6 +232,20 @@ public class java_project extends Application {
 			bagStage.setTitle("bag");
 			bagStage.setScene(bag_page);
 			bagStage.show();
+		});
+		//crypto 密碼確認
+		password_commit.setOnMouseClicked(event->{
+			if (password_check())
+				show_correct_page();
+			else
+				show_wrong_page();
+		});
+		//crypto 頁面關閉
+		correct_password_return.setOnMouseClicked(event->{
+			password_verification_page.close();
+		});
+		wrong_password_return.setOnMouseClicked(event->{
+			password_verification_page.close();
 		});
 		//進入遊戲
 		start.setOnAction(event->{
@@ -298,6 +334,29 @@ public class java_project extends Application {
 //
 //		});
 	}
+	
+	//crypto
+	private String correct_password = "w31c0m3t0c5i3";
+	public boolean password_check() {
+		String answer = password_input.getText();
+		if (answer.equals(correct_password))
+			return true;
+		else
+			return false;
+	}
+	
+	public void show_correct_page() {
+		password_verification_page = new Stage();
+		password_verification_page.setScene(correct_page);
+		password_verification_page.show();
+	}
+	
+	public void show_wrong_page() {
+		password_verification_page = new Stage();
+		password_verification_page.setScene(wrong_page);
+		password_verification_page.show();
+	}
+	
 	public void shop_show() {
 
 	}
