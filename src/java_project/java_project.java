@@ -87,6 +87,7 @@ public class java_project extends Application {
 	public static Scene numberRoad;
 	public static Scene crypto_page;
 	public static Scene word_puzzle_page;
+	public static Stage bag_stage;
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		
@@ -202,6 +203,7 @@ public class java_project extends Application {
 		//點擊背包動作
 		bag.setOnMouseClicked(event->{
 			Stage bagStage=new Stage();
+			java_project.bag_stage=bagStage;
 			bag_cancel.setOnAction(e->{
 				bagStage.close();
 			});
@@ -311,6 +313,7 @@ public class java_project extends Application {
 			card.setOnMouseClicked(e->{
 				Stage cardStage=new Stage();
 				cardStage.setScene(crypto_page);
+				bag_stage.close();
 				cardStage.show();
 			});
 		}
@@ -318,6 +321,7 @@ public class java_project extends Application {
 			zpicture.setOnMouseClicked(e->{
 				Stage zStage=new Stage();
 				zStage.setScene(numberRoad);
+				bag_stage.close();
 				zStage.show();
 			});
 		}
@@ -325,6 +329,7 @@ public class java_project extends Application {
 			cookie.setOnMouseClicked(e->{
 				Stage cookStage=new Stage();
 				cookStage.setScene(word_puzzle_page);
+				bag_stage.close();
 				cookStage.show();
 			});
 		}

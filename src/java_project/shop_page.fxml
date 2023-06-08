@@ -94,9 +94,9 @@
                   <Image url="@lonely.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="shop4" fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="201.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop4" fitHeight="150.0" fitWidth="200.0" layoutX="747.0" layoutY="182.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@lonely.jpg" />
+                  <Image url="@twopiano.png" />
                </image>
             </ImageView>
             <ImageView fx:id="shop8" fitHeight="150.0" fitWidth="200.0" layoutX="736.0" layoutY="369.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
@@ -109,7 +109,7 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="792.0" layoutY="165.0" prefHeight="15.0" prefWidth="88.0" text="商品名稱">
+            <Label layoutX="804.0" layoutY="165.0" prefHeight="15.0" prefWidth="88.0" text="二胡">
                <font>
                   <Font size="19.0" />
                </font>
