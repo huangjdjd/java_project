@@ -68,6 +68,7 @@ public class java_project extends Application {
 	@FXML private ImageView maine_pane8;
 	@FXML private ImageView maine_pane9;
 	@FXML private ImageView maine_pane10;
+	@FXML private ImageView map;
 	@FXML private ImageView hint;
 	@FXML private Rectangle house1;
 	@FXML private Button return_main_d;
@@ -108,8 +109,13 @@ public class java_project extends Application {
 	//
 	ArrayList<String>idlist=new ArrayList<String>();
 
+	//華容道
 	public int fixx=2;
 	public int fixy=2;
+	//拖曳
+	public double x_origin;
+	public double y_origin;
+	
 	public static Scene buy;
 	public static Scene successBuy;
 	public static Scene numberRoad;
@@ -126,7 +132,6 @@ public class java_project extends Application {
 	public static Stage zstage;
 	public static Scene correct_word;
 	public static Scene wrong_word;
-
 	public static Stage temp_page;
 
 	@Override
@@ -230,10 +235,10 @@ public class java_project extends Application {
 		FXMLLoader start_page = new FXMLLoader(getClass().getResource("game_start.fxml"));
 		start_page.setController(this);
 		Parent start_game_page = start_page.load();
+		Scene game_scene=new Scene(start_game_page);
 //		Group mainGroup=new Group(start_game_page);
 //		mainGroup.getChildren().add(money_picture);
 //		mainGroup.getChildren().add(shop_picture);
-		Scene game_scene=new Scene(start_game_page);
 		
 		//數字華榮restart
 		road_restart.setOnAction(event->{
@@ -314,6 +319,139 @@ public class java_project extends Application {
 		correct_word_return.setOnAction(event->{
 			word_vertify.close();
 		});
+		
+		//已購買物品拖曳
+		map.toBack();
+        maine_pane1.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane1.setOnMouseDragged(event -> {
+        	//offset為滑鼠現在位置-移動前位置(必須隨時更新)
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane1.setLayoutX(maine_pane1.getLayoutX() + offsetX);
+            maine_pane1.setLayoutY(maine_pane1.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane2.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane2.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane2.setLayoutX(maine_pane2.getLayoutX() + offsetX);
+            maine_pane2.setLayoutY(maine_pane2.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane3.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane3.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane3.setLayoutX(maine_pane3.getLayoutX() + offsetX);
+            maine_pane3.setLayoutY(maine_pane3.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane4.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane4.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane4.setLayoutX(maine_pane4.getLayoutX() + offsetX);
+            maine_pane4.setLayoutY(maine_pane4.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane5.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane5.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane5.setLayoutX(maine_pane5.getLayoutX() + offsetX);
+            maine_pane5.setLayoutY(maine_pane5.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane6.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane6.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane6.setLayoutX(maine_pane6.getLayoutX() + offsetX);
+            maine_pane6.setLayoutY(maine_pane6.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane7.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane7.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane7.setLayoutX(maine_pane7.getLayoutX() + offsetX);
+            maine_pane7.setLayoutY(maine_pane7.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane8.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane8.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane8.setLayoutX(maine_pane8.getLayoutX() + offsetX);
+            maine_pane8.setLayoutY(maine_pane8.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane9.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane9.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane9.setLayoutX(maine_pane9.getLayoutX() + offsetX);
+            maine_pane9.setLayoutY(maine_pane9.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        
+        maine_pane10.setOnMousePressed(event -> {
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
+        maine_pane10.setOnMouseDragged(event -> {
+            double offsetX = event.getSceneX() - x_origin;
+            double offsetY = event.getSceneY() - y_origin;
+            maine_pane10.setLayoutX(maine_pane10.getLayoutX() + offsetX);
+            maine_pane10.setLayoutY(maine_pane10.getLayoutY() + offsetY);
+            x_origin = event.getSceneX();
+            y_origin = event.getSceneY();
+        });
 		
 		//進入遊戲
 		start.setOnAction(event->{
