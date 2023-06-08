@@ -24,27 +24,27 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Text>
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="412.0" layoutY="212.0">
+      <ImageView fx:id="A_note" fitHeight="75.0" fitWidth="75.0" layoutX="412.0" layoutY="212.0" onMouseClicked="#play_music">
          <image>
             <Image url="@A_note.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="360.0" layoutY="137.0">
+      <ImageView fx:id="C_note" fitHeight="75.0" fitWidth="75.0" layoutX="360.0" layoutY="137.0" onMouseClicked="#play_music">
          <image>
             <Image url="@C_note.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="82.0" layoutX="285.0" layoutY="82.0">
+      <ImageView fx:id="D_note" fitHeight="75.0" fitWidth="82.0" layoutX="285.0" layoutY="82.0" onMouseClicked="#play_music">
          <image>
             <Image url="@D_note.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="381.0" layoutY="27.0">
+      <ImageView fx:id="E_note" fitHeight="75.0" fitWidth="75.0" layoutX="381.0" layoutY="27.0" onMouseClicked="#play_music">
          <image>
             <Image url="@E_note.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="360.0" layoutY="281.0">
+      <ImageView fx:id="G_note" fitHeight="75.0" fitWidth="75.0" layoutX="360.0" layoutY="281.0" onMouseClicked="#play_music">
          <image>
             <Image url="@G_note.png" />
          </image>
