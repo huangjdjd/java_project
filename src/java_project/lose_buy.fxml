@@ -32,7 +32,6 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,32 +39,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" style="-fx-background-image: url('java_project/final_background.png');" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('java_project/shopbackground.png');" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-image: url('java_project/final_background.png');" VBox.vgrow="ALWAYS">
-      <children>
-            <ImageView fx:id="box1" fitHeight="194.0" fitWidth="252.0" layoutX="-11.0" layoutY="5.0" onMouseClicked="#final_box" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@box1.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="box2" fitHeight="206.0" fitWidth="224.0" layoutX="395.0" layoutY="9.0" onMouseClicked="#final_box" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@box2.png" />
-               </image>
-            </ImageView>
-            <Text fx:id="moze" layoutX="240.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="請選擇" wrappingWidth="224.0">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="341.0" prefWidth="345.0" style="-fx-background-image: url('java_project/shopbackground.png');" VBox.vgrow="ALWAYS">
+         <children>
+            <Text layoutX="64.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="購買失敗" wrappingWidth="263.224609375">
                <font>
-                  <Font size="39.0" />
+                  <Font size="60.0" />
                </font>
             </Text>
-            <ImageView fx:id="final_answer" fitHeight="287.0" fitWidth="400.0" layoutX="120.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="68.0" layoutY="20.0" prefHeight="50.0" prefWidth="147.0">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Label>
-      </children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="224.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@zhead2.png" />
+               </image>
+            </ImageView>
+         </children>
     </AnchorPane>
   </children>
 </VBox>

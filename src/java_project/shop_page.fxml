@@ -39,12 +39,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="650.0" prefWidth="950.0" style="-fx-background-image: url('java_project/shopbackground.png');" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-image: url('java_project/shopbackground.png');; -fx-background-position: ;" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fx:id="shop1" fitHeight="150.0" fitWidth="192.0" layoutX="61.0" layoutY="194.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop1" fitHeight="150.0" fitWidth="192.0" layoutX="43.0" layoutY="182.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@computerclass.png" />
                </image>
@@ -54,7 +55,7 @@
                   <Image url="@tenyear.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="shop6" fitHeight="150.0" fitWidth="200.0" layoutX="288.0" layoutY="357.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop6" fitHeight="150.0" fitWidth="200.0" layoutX="272.0" layoutY="357.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@company.png" />
                </image>
@@ -64,12 +65,12 @@
                   <Image url="@aipiano.png" />
                </image>
             </ImageView>
-            <Label layoutX="64.0" layoutY="165.0" prefHeight="25.0" prefWidth="163.0" text="計算機概論與實習">
+            <Label layoutX="48.0" layoutY="165.0" prefHeight="25.0" prefWidth="163.0" style="-fx-font-weight: bold;" text="計算機概論與實習">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="315.0" layoutY="170.0" prefHeight="25.0" prefWidth="122.0" text="十年大樓">
+            <Label layoutX="315.0" layoutY="165.0" prefHeight="25.0" prefWidth="122.0" style="-fx-font-weight: bold;" text="十年大樓">
                <font>
                   <Font size="19.0" />
                </font>
@@ -89,37 +90,37 @@
                   <Image url="@twopiano.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="shop8" fitHeight="109.0" fitWidth="114.0" layoutX="772.0" layoutY="377.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shop8" fitHeight="109.0" fitWidth="114.0" layoutX="750.0" layoutY="378.0" onMouseClicked="#open_buyPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assitant.png" />
                </image>
             </ImageView>
-            <Label layoutX="550.0" layoutY="165.0" prefHeight="25.0" prefWidth="133.0" text="資工音樂會">
+            <Label layoutX="550.0" layoutY="165.0" prefHeight="25.0" prefWidth="133.0" style="-fx-font-weight: bold;" text="資工音樂會">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="804.0" layoutY="165.0" prefHeight="15.0" prefWidth="88.0" text="二胡">
+            <Label layoutX="804.0" layoutY="165.0" prefHeight="15.0" prefWidth="88.0" style="-fx-font-weight: bold;" text="二胡">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="306.0" layoutY="505.0" prefHeight="25.0" prefWidth="122.0" text="多媒體實驗室">
+            <Label layoutX="306.0" layoutY="505.0" prefHeight="25.0" prefWidth="122.0" style="-fx-font-weight: bold;" text="多媒體實驗室">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="563.0" layoutY="337.0" prefHeight="15.0" prefWidth="88.0" text="松鼠木屋">
+            <Label layoutX="563.0" layoutY="337.0" prefHeight="15.0" prefWidth="88.0" style="-fx-font-weight: bold;" text="松鼠木屋">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="322.0" layoutY="336.0" prefHeight="25.0" prefWidth="133.0" text="美國公司工作">
+            <Label layoutX="310.0" layoutY="337.0" prefHeight="25.0" prefWidth="133.0" style="-fx-font-weight: bold;" text="美國公司工作">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="101.0" layoutY="336.0" prefHeight="15.0" prefWidth="88.0" text="AI piano">
+            <Label layoutX="101.0" layoutY="336.0" prefHeight="15.0" prefWidth="88.0" style="-fx-font-weight: bold;" text="AI piano">
                <font>
                   <Font size="19.0" />
                </font>
@@ -134,12 +135,12 @@
                   <Image url="@unviersty.png" />
                </image>
             </ImageView>
-            <Label layoutX="804.0" layoutY="336.0" prefHeight="15.0" prefWidth="88.0" text="助教">
+            <Label layoutX="804.0" layoutY="336.0" prefHeight="15.0" prefWidth="88.0" style="-fx-font-weight: bold;" text="助教">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="573.0" layoutY="505.0" prefHeight="15.0" prefWidth="88.0" text="淡江大學">
+            <Label layoutX="573.0" layoutY="505.0" prefHeight="15.0" prefWidth="88.0" style="-fx-font-weight: bold;" text="淡江大學">
                <font>
                   <Font size="19.0" />
                </font>
@@ -161,6 +162,56 @@
                </image>
             </ImageView>
             <Separator prefHeight="3.0" prefWidth="937.0" style="-fx-background-color: black;" />
+            <Text layoutX="145.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點800" wrappingWidth="88.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="395.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點20000" wrappingWidth="109.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="629.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點2000" wrappingWidth="109.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="853.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點20" wrappingWidth="50.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="150.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點3500" wrappingWidth="88.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="419.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點500" wrappingWidth="88.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="639.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點250" wrappingWidth="109.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="878.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點7000" wrappingWidth="41.999999999999886">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="406.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點10" wrappingWidth="88.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="629.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="記憶點100" wrappingWidth="109.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
       </children>
     </AnchorPane>
   </children>

@@ -19,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -36,10 +37,12 @@ class shop{
 }
 public class java_project extends Application {
 	//Variables
+	public boolean judgemoney=true;
 	public int key_number=4;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	public static int score = 1000;
 	//Components
+	@FXML private AnchorPane main_background;
 	@FXML private ImageView final_answer;
 	@FXML private ImageView box1;
 	@FXML private ImageView box2;
@@ -132,9 +135,11 @@ public class java_project extends Application {
 	public static Scene wrong_word;
 	public static Scene finalpage;
 	public static Stage temp_page;
+	public static Scene losebuy;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
+//		main_background.setStyle("-fx-background-image:url(java_project/main_background.png");
 		idlist.add("22");
 		Stage Zstage=new Stage();
 		zstage=Zstage;
@@ -155,6 +160,12 @@ public class java_project extends Application {
 		Parent buysuc = buySuccess.load();
 		Scene buy_success=new Scene(buysuc);
 		java_project.successBuy=buy_success;
+		//購買失敗葉面
+		FXMLLoader lose = new FXMLLoader(getClass().getResource("lose_buy.fxml"));
+		lose.setController(this);
+		Parent root_lose =lose.load();
+		Scene lose_buy=new Scene(root_lose);
+		java_project.losebuy=lose_buy;
 		//說明頁面
 		FXMLLoader direction = new FXMLLoader(getClass().getResource("direction.fxml"));
 		direction.setController(this);
@@ -379,7 +390,7 @@ public class java_project extends Application {
 //	        house1.setY(newy);
 //	    });
     }
-	
+
 	
 	public void judge_word_answer(Event event) {
 		Button button = (Button)event.getSource();
@@ -596,57 +607,98 @@ public class java_project extends Application {
 		}
 		
 	}
+	///判斷購物金額
+	public void judge_money(int score,String id) {
+		switch (id) {
+		case "shop1": if(score<800) {
+			judgemoney=false;
+		}break;
+		case "shop2": if(score<20000) {
+			judgemoney=false;
+		}break;
+		case "shop3": if(score<2000) {
+			judgemoney=false;
+		}break;
+		case "shop4": if(score<20) {
+			judgemoney=false;
+		}break;
+		case "shop5": if(score<3500) {
+			judgemoney=false;
+		}break;
+		case "shop6": if(score<500) {
+			judgemoney=false;
+		}break;
+		case "shop7": if(score<250) {
+			judgemoney=false;
+		}break;
+		case "shop8": if(score<7000) {
+			judgemoney=false;
+		}break;
+		case "shop9": if(score<10) {
+			judgemoney=false;
+		}break;
+		case "shop10": if(score<100) {
+			judgemoney=false;
+		}break;
+		}
+	}
 	public void open_buyPage(Event event) {
 		ImageView image = (ImageView)event.getSource();
 		String id=image.getId();
 		System.out.println(id);
+		
 //		System.out.println("kddd");
 //		ImageView s=(ImageView)image;
 //		String id=s.getId();
 		Stage newStage=new Stage();
 		 newStage.setTitle("New Window");
+		 newStage.setScene(buy);
+		 newStage.show();
+		 judge_money(score,id);
 		 cancelBuy.setOnAction(e->{
 			 newStage.close();
 		 });
 		 sureBuy.setOnAction(e->{
-			 switch (id){
-			 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("");
-			 break;
-			 case "shop2": 	Image image2 = new Image("java_project/tenyear.png");maine_pane2.setImage(image2);hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
-			 Image cardimage=new Image("java_project/tenyear.png");card.setImage(cardimage);
-			 break;
-			 case "shop3": 	Image image3 = new Image("java_project/concert.png");maine_pane3.setImage(image3);hint_message.setText("");
-			 break;
-			 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");maine_pane4.setImage(image4);hint_message.setText("恭喜你獲得二胡");
-			 Image pianoimage=new Image("java_project/twopiano.png");piano.setImage(pianoimage);
-			 break;
-			 case "shop5": 	Image image5 = new Image("java_project/aipiano.png");maine_pane5.setImage(image5);hint_message.setText("");
-			 break;
-			 case "shop6": 	Image image6 = new Image("java_project/company.png");maine_pane6.setImage(image6);hint_message.setText("");
-			 break;
-			 case "shop7": 	Image image7 = new Image("java_project/animal.png");maine_pane7.setImage(image7);hint_message.setText("恭喜你獲得鐵皮屋鬆餅");
-			 Image cookieimage=new Image("java_project/animal.png");cookie.setImage(cookieimage);
-			 break;
-			 case "shop8": 	Image image8 = new Image("java_project/assitant.png");maine_pane8.setImage(image8);hint_message.setText("恭喜你獲得照片");
-			 Image zimage=new Image("java_project/assitant.png");zpicture.setImage(zimage);
-			 break;
-			 case "shop9": 	Image image9 = new Image("java_project/lab.png");maine_pane9.setImage(image9);hint_message.setText("");
-			 break;
-			 case "shop10": Image image10 = new Image("java_project/lonely.jpg");maine_pane10.setImage(image10);
-			 break;
+			 if(judgemoney==true) {
+				 switch (id){
+				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("");score-=800;
+				 break;
+				 case "shop2": 	Image image2 = new Image("java_project/tenyear.png");maine_pane2.setImage(image2);hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
+				 Image cardimage=new Image("java_project/tenyear.png");card.setImage(cardimage);score-=20000;
+				 break;
+				 case "shop3": 	Image image3 = new Image("java_project/concert.png");maine_pane3.setImage(image3);hint_message.setText("");score-=2500;
+				 break;
+				 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");maine_pane4.setImage(image4);hint_message.setText("恭喜你獲得二胡");score-=20;
+				 Image pianoimage=new Image("java_project/twopiano.png");piano.setImage(pianoimage);
+				 break;
+				 case "shop5": 	Image image5 = new Image("java_project/aipiano.png");maine_pane5.setImage(image5);hint_message.setText("");score-=3500;
+				 break;
+				 case "shop6": 	Image image6 = new Image("java_project/company.png");maine_pane6.setImage(image6);hint_message.setText("");score-=500;
+				 break;
+				 case "shop7": 	Image image7 = new Image("java_project/animal.png");maine_pane7.setImage(image7);hint_message.setText("恭喜你獲得鐵皮屋鬆餅");score-=250;
+				 Image cookieimage=new Image("java_project/animal.png");cookie.setImage(cookieimage);
+				 break;
+				 case "shop8": 	Image image8 = new Image("java_project/assitant.png");maine_pane8.setImage(image8);hint_message.setText("恭喜你獲得照片");score-=7000;
+				 Image zimage=new Image("java_project/assitant.png");zpicture.setImage(zimage);
+				 break;
+				 case "shop9": 	Image image9 = new Image("java_project/lab.png");maine_pane9.setImage(image9);hint_message.setText("");score-=10;
+				 break;
+				 case "shop10": Image image10 = new Image("java_project/lonely.jpg");maine_pane10.setImage(image10);score-=100;
+				 break;
+				 }
+				 money_show.setText(""+score);
+				 newStage.setScene(successBuy);
+				 	
 			 }
-			 newStage.setScene(successBuy);
+			 else {
+				 newStage.setScene(losebuy);
+				 
+			 }
 			 
-		 });
-		 newStage.setScene(buy);
-		 newStage.show();
-//		 
-	}
 
-	public void alert() {
-		System.out.println("ss");
-		score+=1;
-		System.out.println(score);
+		 });
+
+//		 
 	}
 	public void final_box(Event event) {
 		ImageView image = (ImageView)event.getSource();
@@ -663,7 +715,7 @@ public class java_project extends Application {
 			box1.setImage(null);
 			box2.setImage(null);
 			moze.setText("請解開摩斯密碼");
-			Image bad=new Image("java_project/moze.png");
+			Image bad=new Image("java_project/hell.jpg");
 			final_answer.setImage(bad);
 		}
 //		System.out.println("sdee");

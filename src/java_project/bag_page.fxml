@@ -41,9 +41,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" style="-fx-background-image: url('java_project/gray.png');" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-image: url('java_project/gray.png');" VBox.vgrow="ALWAYS">
       <children>
             <Text layoutX="236.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="背包畫面">
                <font>
