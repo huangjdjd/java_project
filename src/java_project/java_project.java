@@ -24,10 +24,11 @@ class shop{
 public class java_project extends Application {
 	//Variables
 	public boolean judgemoney=true;
-	public int key_number=0;
+	public int key_number=4;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	public static int score = 10000000;
 	//Components
+	@FXML private ImageView treasure;
 	@FXML private AnchorPane main_background;
 	@FXML private ImageView final_answer;
 	@FXML private ImageView box1;
@@ -125,6 +126,7 @@ public class java_project extends Application {
 	public static Scene finalpage;
 	public static Stage temp_page;
 	public static Scene losebuy;
+
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
@@ -250,7 +252,13 @@ public class java_project extends Application {
 			zstage.close();
 		});
 
-
+//		最後點擊寶箱
+		treasure.setOnMouseClicked(e->{
+			if(key_number==4) {
+				Image tre=new Image("java_project/coordinate.png");
+				treasure.setImage(tre);
+			}
+		});
 	
 		///onclick_main_說明
 		saying.setOnAction(event->{
@@ -733,6 +741,7 @@ public class java_project extends Application {
 	}
 	///判斷購物金額
 	public void judge_money(int score,String id) {
+		judgemoney=true;
 		switch (id) {
 		case "shop1": if(score<800) {
 			judgemoney=false;
@@ -785,19 +794,19 @@ public class java_project extends Application {
 		 sureBuy.setOnAction(e->{
 			 if(judgemoney==true) {
 				 switch (id){
-				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("甚麼都沒有");score-=800;
+				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("要記得來上課");score-=800;
 				 break;
 				 case "shop2": 	Image image2 = new Image("java_project/tenyear.png");maine_pane2.setImage(image2);hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
 				 Image cardimage=new Image("java_project/tenyear.png");card.setImage(cardimage);score-=20000;
 				 break;
-				 case "shop3": 	Image image3 = new Image("java_project/concert.png");maine_pane3.setImage(image3);hint_message.setText("");score-=2500;
+				 case "shop3": 	Image image3 = new Image("java_project/concert.png");maine_pane3.setImage(image3);hint_message.setText("繼續努力");score-=2500;
 				 break;
 				 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");maine_pane4.setImage(image4);hint_message.setText("恭喜你獲得二胡");score-=20;
 				 Image pianoimage=new Image("java_project/twopiano.png");piano.setImage(pianoimage);
 				 break;
-				 case "shop5": 	Image image5 = new Image("java_project/aipiano.png");maine_pane5.setImage(image5);hint_message.setText("");score-=3500;
+				 case "shop5": 	Image image5 = new Image("java_project/aipiano.png");maine_pane5.setImage(image5);hint_message.setText("要記得來上課");score-=3500;
 				 break;
-				 case "shop6": 	Image image6 = new Image("java_project/company.png");maine_pane6.setImage(image6);hint_message.setText("");score-=500;
+				 case "shop6": 	Image image6 = new Image("java_project/company.png");maine_pane6.setImage(image6);hint_message.setText("計概要認真聽");score-=500;
 				 break;
 				 case "shop7": 	Image image7 = new Image("java_project/animal.png");maine_pane7.setImage(image7);hint_message.setText("恭喜你獲得鐵皮屋鬆餅");score-=250;
 				 Image cookieimage=new Image("java_project/animal.png");cookie.setImage(cookieimage);

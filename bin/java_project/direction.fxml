@@ -33,16 +33,21 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 
 <VBox prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: gray;" VBox.vgrow="ALWAYS">
       <children>
-            <Circle fill="DODGERBLUE" layoutX="293.0" layoutY="201.0" radius="56.0" stroke="BLACK" strokeType="INSIDE" />
             <Button fx:id="return_main_d" layoutX="47.0" layoutY="35.0" mnemonicParsing="false" text="回上頁" />
+            <ImageView fitHeight="524.0" fitWidth="921.0" layoutX="15.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@indirect.png" />
+               </image>
+            </ImageView>
       </children>
     </AnchorPane>
   </children>
