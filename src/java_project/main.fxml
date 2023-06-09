@@ -43,7 +43,7 @@
   <children>
     <AnchorPane fx:id="about_Us" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button id="about_us" fx:id="about_us" layoutX="635.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="101.0" style="-fx-background-radius: 20; -fx-background-color: gray;" text="關於我們" textFill="#eee9e9">
+            <Button id="about_us" fx:id="about_us" layoutX="643.0" layoutY="327.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="141.0" style="-fx-background-radius: 20; -fx-background-color: gray;" text="關於我們" textFill="#eee9e9">
                <font>
                   <Font size="18.0" />
                </font>
@@ -51,7 +51,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button id="about_us" fx:id="start" layoutX="464.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="101.0" style="-fx-background-radius: 20; -fx-background-color: gray;" text="start" textFill="#eee9e9">
+            <Button id="about_us" fx:id="start" layoutX="444.0" layoutY="327.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" style="-fx-background-radius: 20; -fx-background-color: gray;" text="start" textFill="#eee9e9">
                <font>
                   <Font size="18.0" />
                </font>
@@ -59,7 +59,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button id="about_us" fx:id="saying" layoutX="310.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="101.0" style="-fx-background-radius: 20; -fx-background-color: gray;" text="saying" textFill="#eee9e9">
+            <Button id="about_us" fx:id="saying" layoutX="236.0" layoutY="327.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" style="-fx-background-radius: 20; -fx-background-color: gray;" text="saying" textFill="#eee9e9">
                <font>
                   <Font size="18.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Text layoutX="444.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: ImpLucida Sans Unicodeact;" text="遊戲名稱" wrappingWidth="141.0">
+            <Text layoutX="430.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: ImpLucida Sans Unicodeact;" text="遊戲名稱" wrappingWidth="141.0">
                <font>
                   <Font size="33.0" />
                </font>
