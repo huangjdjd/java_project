@@ -45,7 +45,7 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-image: url('java_project/gray.png');" VBox.vgrow="ALWAYS">
       <children>
-            <Text layoutX="236.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="背包畫面">
+            <Text layoutX="283.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="背包">
                <font>
                   <Font size="40.0" />
                </font>

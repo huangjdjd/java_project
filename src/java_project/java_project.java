@@ -32,7 +32,9 @@ public class java_project extends Application {
 	public boolean judgemoney=true;
 	public int key_number=4;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
+	
 	//Components
+	@FXML private ImageView treasure;
 	@FXML private AnchorPane main_background;
 	@FXML private ImageView final_answer;
 	@FXML private ImageView box1;
@@ -130,6 +132,7 @@ public class java_project extends Application {
 	public static Scene finalpage;
 	public static Stage temp_page;
 	public static Scene losebuy;
+
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
@@ -275,7 +278,13 @@ public class java_project extends Application {
 			zstage.close();
 		});
 
-
+//		最後點擊寶箱
+		treasure.setOnMouseClicked(e->{
+			if(key_number==4) {
+				Image tre=new Image("java_project/coordinate.png");
+				treasure.setImage(tre);
+			}
+		});
 	
 		///onclick_main_說明
 		saying.setOnAction(event->{
@@ -588,14 +597,14 @@ public class java_project extends Application {
 		String id=image.getId();
 		Image images=image.getImage();
 		String addid=String.valueOf(id.charAt(1))+String.valueOf(id.charAt(2));
-		System.out.println(id);
+//		System.out.println(id);
 		int x= Character.getNumericValue(id.charAt(1));
 		int y= Character.getNumericValue(id.charAt(2));
 		int nx=0;
 		int ny=0;
 		int lx=Character.getNumericValue(idlist.get(0).charAt(0));
 		int ly=Character.getNumericValue(idlist.get(0).charAt(1));
-		System.out.println(lx+" "+ly);
+//		System.out.println(lx+" "+ly);
 		for(int i=-1;i<=1;i++) {
 			nx=x+i;
 			ny=y+i;
@@ -752,6 +761,7 @@ public class java_project extends Application {
 	}
 	///判斷購物金額
 	public void judge_money(int score,String id) {
+		judgemoney=true;
 		switch (id) {
 		case "shop1": if(score<800) {
 			judgemoney=false;
