@@ -714,7 +714,7 @@ public class java_project extends Application {
 		else if(id.equals("box2")) {
 			box1.setImage(null);
 			box2.setImage(null);
-			moze.setText("請解開摩斯密碼");
+			moze.setText("要爆肝了");
 			Image bad=new Image("java_project/hell.jpg");
 			final_answer.setImage(bad);
 		}
