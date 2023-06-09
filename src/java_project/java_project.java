@@ -24,7 +24,7 @@ class shop{
 public class java_project extends Application {
 	//Variables
 	public boolean judgemoney=true;
-	public int key_number=4;
+	public int key_number=0;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	public static int score = 10000000;
 	//Components
@@ -792,6 +792,7 @@ public class java_project extends Application {
 			 newStage.close();
 		 });
 		 sureBuy.setOnAction(e->{
+			 
 			 if(judgemoney==true) {
 				 switch (id){
 				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("要記得來上課");score-=800;
