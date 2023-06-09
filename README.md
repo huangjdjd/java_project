@@ -1,5 +1,13 @@
 # java_project
 
+## sources
+ChatGPT
+
+## references
+<a href="https://youtu.be/boAJUSN8fOU">Programming Tetris Game, Java (fx) Tutorial 1/2</a>
+<a href="https://youtu.be/KGaixc-ExXA">Programming Tetris Game, Java (fx) Tutorial 2/2</a>
+<a href="https://luckystar1216.pixnet.net/blog/post/17030605">使用Java Timer及TimerTask,定時執行Java程式</a>
+
 ## icons
 <a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Roundicons - Flaticon</a>
 <br>
