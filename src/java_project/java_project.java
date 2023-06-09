@@ -847,7 +847,7 @@ public class java_project extends Application {
 				 case "shop9": 	Image image9 = new Image("java_project/lab.png");
 				 	maine_pane9.setImage(image9); hint_message.setText(""); score-=10; score_per_tick+=5;
 				 	break;
-				 case "shop10": Image image10 = new Image("java_project/university.jpg");
+				 case "shop10": Image image10 = new Image("java_project/unversity.jpg");
 				 	maine_pane10.setImage(image10); score-=100; score_per_tick+=30;
 				 	break;
 				 }
