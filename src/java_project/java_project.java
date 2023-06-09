@@ -530,7 +530,7 @@ public class java_project extends Application {
 //		});
 		///設初始畫面
 
-		primaryStage.setTitle("遊戲名稱");
+		primaryStage.setTitle("FIND-S-MEMORY");
 		primaryStage.setScene(mscene);
 		primaryStage.show();
 //	    house1.setOnMousePressed(event -> {
@@ -743,7 +743,6 @@ public class java_project extends Application {
 			card.setOnMouseClicked(e->{
 				Stage cardStage=new Stage();
 				cardStage.setScene(crypto_page);
-				cardStage.setTitle("ss");
 				bag_stage.close();
 				cardStage.show();
 			});
@@ -752,7 +751,6 @@ public class java_project extends Application {
 			zpicture.setOnMouseClicked(e->{
 //				Stage zStage=new Stage();
 				zstage.setScene(numberRoad);
-				zstage.setTitle("ss");
 				bag_stage.close();
 				zstage.show();
 			});
@@ -761,7 +759,6 @@ public class java_project extends Application {
 			cookie.setOnMouseClicked(e->{
 				Stage cookStage=new Stage();
 				cookStage.setScene(word_puzzle_page);
-				cookStage.setTitle("ss");
 				bag_stage.close();
 				cookStage.show();
 			});
@@ -825,15 +822,15 @@ public class java_project extends Application {
 			 if(judgemoney==true) {
 				 switch (id){
 				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");
-				 	maine_pane1.setImage(image1); hint_message.setText(""); score-=800; score_per_tick+=200;
+				 	maine_pane1.setImage(image1); hint_message.setText("恭喜你獲得密碼卡，可打開背包看"); score-=800; score_per_tick+=200;
+				 	Image cardimage=new Image("java_project/card.png"); card.setImage(cardimage);
 				 	break;
 				 case "shop2": 	Image image2 = new Image("java_project/tenyear.png");
-				 	maine_pane2.setImage(image2); hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
-				 	Image cardimage=new Image("java_project/tenyear.png"); card.setImage(cardimage);
+				 	maine_pane2.setImage(image2); hint_message.setText("歲月真是如梭呀");
 				 	score-=20000; score_per_tick+=3000;
 				 	break;
 				 case "shop3": 	Image image3 = new Image("java_project/concert.png");System.out.println("a");
-				 	maine_pane3.setImage(image3);hint_message.setText("");score-=2500; score_per_tick+=300;
+				 	maine_pane3.setImage(image3);hint_message.setText("資工系音樂會真是個不錯的活動");score-=2500; score_per_tick+=300;
 				 	break;
 				 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");
 				 	maine_pane4.setImage(image4); hint_message.setText("恭喜你獲得二胡");
@@ -841,24 +838,24 @@ public class java_project extends Application {
 				 	piano.setImage(pianoimage);
 				 	break;
 				 case "shop5": 	Image image5 = new Image("java_project/aipiano.png");
-				 	maine_pane5.setImage(image5); hint_message.setText(""); score-=3500; score_per_tick+=500;
+				 	maine_pane5.setImage(image5); hint_message.setText("這是我們實驗室的心血之一"); score-=3500; score_per_tick+=500;
 				 	break;
 				 case "shop6": 	Image image6 = new Image("java_project/company.png");
-				 	maine_pane6.setImage(image6); hint_message.setText(""); score-=500; score_per_tick+=100;
+				 	maine_pane6.setImage(image6); hint_message.setText("遙想在美國工作的那些時光"); score-=500; score_per_tick+=100;
 				 	break;
 				 case "shop7": 	Image image7 = new Image("java_project/animal.png");
 				 	maine_pane7.setImage(image7); hint_message.setText("恭喜你獲得鐵皮屋鬆餅"); score-=250; score_per_tick+=50;
-				 	Image cookieimage=new Image("java_project/animal.png"); cookie.setImage(cookieimage);
+				 	Image cookieimage=new Image("java_project/pancake.jpg"); cookie.setImage(cookieimage);
 				 	break;
 				 case "shop8": 	Image image8 = new Image("java_project/assitant.png");
 				 	maine_pane8.setImage(image8); hint_message.setText("恭喜你獲得照片"); score-=7000; score_per_tick+=800;
-				 	Image zimage=new Image("java_project/assitant.png"); zpicture.setImage(zimage);
+				 	Image zimage=new Image("java_project/z.png"); zpicture.setImage(zimage);
 				 	break;
 				 case "shop9": 	Image image9 = new Image("java_project/lab.png");
-				 	maine_pane9.setImage(image9); hint_message.setText(""); score-=10; score_per_tick+=5;
+				 	maine_pane9.setImage(image9); hint_message.setText("我們的實驗室肯定能日益壯大"); score-=10; score_per_tick+=5;
 				 	break;
 				 case "shop10": Image image10 = new Image("java_project/unversity.jpg");
-				 	maine_pane10.setImage(image10); score-=100; score_per_tick+=30;
+				 	maine_pane10.setImage(image10); hint_message.setText("青春的時光呀"); score-=100; score_per_tick+=30;
 				 	break;
 				 }
 				 money_show.setText(""+score);
