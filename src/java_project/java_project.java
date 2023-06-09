@@ -833,7 +833,7 @@ public class java_project extends Application {
 				 	maine_pane3.setImage(image3);hint_message.setText("資工系音樂會真是個不錯的活動");score-=2500; score_per_tick+=300;
 				 	break;
 				 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");
-				 	maine_pane4.setImage(image4); hint_message.setText("恭喜你獲得二胡");
+				 	maine_pane4.setImage(image4); hint_message.setText("音樂也是我的一條道路，恭喜你獲得二胡");
 				 	score-=20; score_per_tick+=15; Image pianoimage=new Image("java_project/twopiano.png");
 				 	piano.setImage(pianoimage);
 				 	break;
@@ -844,11 +844,11 @@ public class java_project extends Application {
 				 	maine_pane6.setImage(image6); hint_message.setText("遙想在美國工作的那些時光"); score-=500; score_per_tick+=100;
 				 	break;
 				 case "shop7": 	Image image7 = new Image("java_project/animal.png");
-				 	maine_pane7.setImage(image7); hint_message.setText("恭喜你獲得鐵皮屋鬆餅"); score-=250; score_per_tick+=50;
+				 	maine_pane7.setImage(image7); hint_message.setText("好多松鼠，恭喜你獲得鐵皮屋鬆餅"); score-=250; score_per_tick+=50;
 				 	Image cookieimage=new Image("java_project/pancake.jpg"); cookie.setImage(cookieimage);
 				 	break;
 				 case "shop8": 	Image image8 = new Image("java_project/assitant.png");
-				 	maine_pane8.setImage(image8); hint_message.setText("恭喜你獲得照片"); score-=7000; score_per_tick+=800;
+				 	maine_pane8.setImage(image8); hint_message.setText("助教們是課程的基石，恭喜你獲得照片"); score-=7000; score_per_tick+=800;
 				 	Image zimage=new Image("java_project/z.png"); zpicture.setImage(zimage);
 				 	break;
 				 case "shop9": 	Image image9 = new Image("java_project/lab.png");
