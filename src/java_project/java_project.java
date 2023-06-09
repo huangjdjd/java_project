@@ -38,9 +38,9 @@ class shop{
 public class java_project extends Application {
 	//Variables
 	public boolean judgemoney=true;
-	public int key_number=4;
+	public int key_number=0;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
-	public static int score = 1000;
+	public static int score = 10000000;
 	//Components
 	@FXML private AnchorPane main_background;
 	@FXML private ImageView final_answer;
@@ -443,14 +443,14 @@ public class java_project extends Application {
 		String id=image.getId();
 		Image images=image.getImage();
 		String addid=String.valueOf(id.charAt(1))+String.valueOf(id.charAt(2));
-		System.out.println(id);
+//		System.out.println(id);
 		int x= Character.getNumericValue(id.charAt(1));
 		int y= Character.getNumericValue(id.charAt(2));
 		int nx=0;
 		int ny=0;
 		int lx=Character.getNumericValue(idlist.get(0).charAt(0));
 		int ly=Character.getNumericValue(idlist.get(0).charAt(1));
-		System.out.println(lx+" "+ly);
+//		System.out.println(lx+" "+ly);
 		for(int i=-1;i<=1;i++) {
 			nx=x+i;
 			ny=y+i;
@@ -661,7 +661,7 @@ public class java_project extends Application {
 		 sureBuy.setOnAction(e->{
 			 if(judgemoney==true) {
 				 switch (id){
-				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("");score-=800;
+				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");maine_pane1.setImage(image1);hint_message.setText("甚麼都沒有");score-=800;
 				 break;
 				 case "shop2": 	Image image2 = new Image("java_project/tenyear.png");maine_pane2.setImage(image2);hint_message.setText("恭喜你獲得密碼卡，可打開背包看");
 				 Image cardimage=new Image("java_project/tenyear.png");card.setImage(cardimage);score-=20000;

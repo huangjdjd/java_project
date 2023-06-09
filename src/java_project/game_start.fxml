@@ -50,9 +50,9 @@
                </image>
             </ImageView>
             <Label fx:id="money_show" layoutX="878.0" layoutY="22.0" prefHeight="43.0" prefWidth="66.0" text=":Label" />
-            <ImageView fx:id="money_picture" fitHeight="59.0" fitWidth="73.0" layoutX="808.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="money_picture" fitHeight="62.0" fitWidth="63.0" layoutX="808.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@money.png" />
+                  <Image url="@pear.png" />
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="62.0" layoutX="26.0" layoutY="565.0" stroke="BLACK" strokeType="INSIDE" width="73.0" />
