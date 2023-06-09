@@ -28,9 +28,9 @@ public class java_project extends Application {
 	//Variables
 	public static final int tick = 5000;
 	public static int score_per_tick = 0;
-	public static int score = 10;
+	public static int score = 50000;
 	public boolean judgemoney=true;
-	public int key_number=4;
+	public int key_number=0;
 	ArrayList<ImageView>jpglist=new ArrayList<ImageView>();
 	
 	//Components
@@ -132,7 +132,7 @@ public class java_project extends Application {
 	public static Scene finalpage;
 	public static Stage temp_page;
 	public static Scene losebuy;
-
+	public int numberkey=0;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
@@ -141,6 +141,7 @@ public class java_project extends Application {
 		Stage Zstage=new Stage();
 		zstage=Zstage;
 		///最終葉面
+		
 		FXMLLoader finals = new FXMLLoader(getClass().getResource("final.fxml"));
 		finals.setController(this);
 		Parent root_final = finals.load();
@@ -564,6 +565,7 @@ public class java_project extends Application {
 			word_vertify .setScene(correct_word);
 			Image keyimage=new Image("java_project/key.png");
 			key_number+=1;
+			System.out.println(key_number);
 			cookie_key.setImage(keyimage);
 			
 			word_vertify.show();
@@ -632,7 +634,11 @@ public class java_project extends Application {
 		}
 		Image zpicimage=new Image("java_project/key.png");
 		zpicture_key.setImage(zpicimage);
-		key_number+=1;
+		if(numberkey<1) {
+			key_number+=1;
+		}
+		numberkey+=1;
+		System.out.println(key_number);
 
 	}
 	
@@ -691,7 +697,9 @@ public class java_project extends Application {
 		Image crytoimage=new Image("java_project/key.png");
 		card_key.setImage(crytoimage);
 		key_number+=1;
+		System.out.println(key_number);
 		temp_page.show();
+		System.out.println(key_number);
 	}
 
 	public void show_wrong_page() {
@@ -707,6 +715,7 @@ public class java_project extends Application {
 		Image pianoimage=new Image("java_project/key.png");
 		piano_key.setImage(pianoimage);
 		key_number+=1;
+		System.out.println(key_number);
 		temp_page.show();
 	}
 
@@ -812,6 +821,7 @@ public class java_project extends Application {
 			 newStage.close();
 		 });
 		 sureBuy.setOnAction(e->{
+			 
 			 if(judgemoney==true) {
 				 switch (id){
 				 case "shop1": 	Image image1 = new Image("java_project/computerclass.png");
@@ -822,7 +832,7 @@ public class java_project extends Application {
 				 	Image cardimage=new Image("java_project/tenyear.png"); card.setImage(cardimage);
 				 	score-=20000; score_per_tick+=3000;
 				 	break;
-				 case "shop3": 	Image image3 = new Image("java_project/concert.png");
+				 case "shop3": 	Image image3 = new Image("java_project/concert.png");System.out.println("a");
 				 	maine_pane3.setImage(image3);hint_message.setText("");score-=2500; score_per_tick+=300;
 				 	break;
 				 case "shop4": 	Image image4 = new Image("java_project/twopiano.png");

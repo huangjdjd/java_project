@@ -63,42 +63,42 @@
             <Button fx:id="road_restart" layoutX="531.0" layoutY="340.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" text="取消" />
             <ImageView fx:id="a12" fitHeight="86.0" fitWidth="86.0" layoutX="332.0" layoutY="194.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@2.png" />
+                  <Image url="@7.png" />
                </image>
             </ImageView>
 				<ImageView fx:id="a21" fitHeight="86.0" fitWidth="86.0" layoutX="248.0" layoutY="280.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@8.png" />
+                  <Image url="@2.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a11" fitHeight="86.0" fitWidth="86.0" layoutX="246.0" layoutY="194.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@3.png" />
+                  <Image url="@6.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a20" fitHeight="86.0" fitWidth="86.0" layoutX="162.0" layoutY="280.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@6.png" />
+                  <Image url="@5.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a02" fitHeight="86.0" fitWidth="86.0" layoutX="332.0" layoutY="108.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@4.png" />
+                  <Image url="@9.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a01" fitHeight="86.0" fitWidth="86.0" layoutX="246.0" layoutY="108.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@7.png" />
+                  <Image url="@3.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a10" fitHeight="86.0" fitWidth="86.0" layoutX="162.0" layoutY="194.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@5.png" />
+                  <Image url="@4.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a00" fitHeight="86.0" fitWidth="86.0" layoutX="162.0" layoutY="108.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@9.png" />
+                  <Image url="@8.png" />
                </image>
             </ImageView>
             <ImageView fx:id="a22" fitHeight="86.0" fitWidth="86.0" layoutX="335.0" layoutY="280.0" onMouseClicked="#number_road" pickOnBounds="true" preserveRatio="true" />
@@ -107,6 +107,11 @@
                   <Font size="16.0" />
                </font>
             </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="453.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@z.png" />
+               </image>
+            </ImageView>
          </children>
     </AnchorPane>
   </children>
